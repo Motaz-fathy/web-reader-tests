@@ -15,10 +15,21 @@ interface HamsaWebReaderProps {
   className?: string;
 }
 
+const DEFAULT_PROJECT_ID = "a5314154-eb11-429e-9b0f-6cfaf459e671";
+const DEFAULT_API_URL =
+  process.env.NEXT_PUBLIC_HAMSA_API_URL || "https://api-dev.tryhamsa.com";
+const DEFAULT_BASE_URL =
+  process.env.NEXT_PUBLIC_HAMSA_BASE_URL ||
+  (typeof window !== "undefined" &&
+  (window.location.hostname === "localhost" ||
+    window.location.hostname === "127.0.0.1")
+    ? "https://media-dev.tryhamsa.com"
+    : "https://media-dev.tryhamsa.com");
+
 function HamsaWebReaderContent({
-  projectId = "a5314154-eb11-429e-9b0f-6cfaf459e671",
-  baseUrl = "https://api-dev.tryhamsa.com",
-  apiUrl = "https://api-dev.tryhamsa.com",
+  projectId = DEFAULT_PROJECT_ID,
+  baseUrl = DEFAULT_BASE_URL,
+  apiUrl = DEFAULT_API_URL,
   placement = "floating",
   theme = "dark",
   language = "EGY",
@@ -27,13 +38,16 @@ function HamsaWebReaderContent({
 }: HamsaWebReaderProps) {
   const searchParams = useSearchParams();
 
-  // Allow URL query params override for testing: ?projectId=...&apiUrl=...&baseUrl=...
+  // Allow URL query params override for easy testing on any environment:
+  // ?projectId=...&apiUrl=...&baseUrl=...&theme=...
   const activeProjectId = searchParams.get("projectId") || projectId;
   const activeApiUrl = searchParams.get("apiUrl") || apiUrl;
   const activeBaseUrl = searchParams.get("baseUrl") || baseUrl;
   const activeTheme = (searchParams.get("theme") as "dark" | "light") || theme;
+  const activePlacement =
+    (searchParams.get("placement") as "floating" | "inline") || placement;
 
-  // Re-trigger initialization on client-side navigation if Hamsa SDK exposes init/scan
+  // Re-trigger initialization on client-side navigation or param changes
   useEffect(() => {
     if (typeof window !== "undefined") {
       const win = window as any;
@@ -45,17 +59,17 @@ function HamsaWebReaderContent({
         }
       }
     }
-  }, [activeProjectId, activeApiUrl, placement]);
+  }, [activeProjectId, activeApiUrl, activeBaseUrl, activePlacement]);
 
   return (
     <>
       <div
-        key={`${activeProjectId}-${activeApiUrl}`}
+        key={`${activeProjectId}-${activeApiUrl}-${activeBaseUrl}-${activePlacement}`}
         {...{ "hamsa-webreader": "" }}
         data-projectid={activeProjectId}
         data-base-url={activeBaseUrl}
         data-api-url={activeApiUrl}
-        data-placement={placement}
+        data-placement={activePlacement}
         data-theme={activeTheme}
         data-language={language}
         data-ui-language={uiLanguage}
