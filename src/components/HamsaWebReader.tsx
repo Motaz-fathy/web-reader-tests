@@ -17,7 +17,7 @@ interface HamsaWebReaderProps {
 
 function HamsaWebReaderContent({
   projectId = "a5314154-eb11-429e-9b0f-6cfaf459e671",
-  baseUrl = "http://localhost:5173",
+  baseUrl = "https://api-dev.tryhamsa.com",
   apiUrl = "https://api-dev.tryhamsa.com",
   placement = "floating",
   theme = "dark",
