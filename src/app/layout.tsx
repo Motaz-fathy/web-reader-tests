@@ -83,7 +83,7 @@ export default function RootLayout({
         <main className="flex-1">{children}</main>
         <Footer />
         <HamsaWebReader
-          projectId="bd235378-cd9d-4d27-97c6-e3b93aae3110"
+          projectId="a5314154-eb11-429e-9b0f-6cfaf459e671"
           baseUrl="http://localhost:5173"
           apiUrl="https://api-dev.tryhamsa.com"
           placement="floating"
