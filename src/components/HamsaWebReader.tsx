@@ -2,7 +2,7 @@
 
 import React, { useEffect, Suspense } from "react";
 import Script from "next/script";
-import { useSearchParams } from "next/navigation";
+import { useSearchParams, usePathname } from "next/navigation";
 
 interface HamsaWebReaderProps {
   projectId?: string;
@@ -37,6 +37,7 @@ function HamsaWebReaderContent({
   className = "",
 }: HamsaWebReaderProps) {
   const searchParams = useSearchParams();
+  const pathname = usePathname();
 
   // Allow URL query params override for easy testing on any environment:
   // ?projectId=...&apiUrl=...&baseUrl=...&theme=...
@@ -51,20 +52,21 @@ function HamsaWebReaderContent({
   useEffect(() => {
     if (typeof window !== "undefined") {
       const win = window as any;
-      if (typeof win.HamsaWebReader?.init === "function") {
+      const reinit = win.HamsaWebReader?.reinit || win.HamsaWebReader?.init || win.__hamsaWebReaderMount;
+      if (typeof reinit === "function") {
         try {
-          win.HamsaWebReader.init();
+          reinit();
         } catch (err) {
           console.warn("HamsaWebReader re-init:", err);
         }
       }
     }
-  }, [activeProjectId, activeApiUrl, activeBaseUrl, activePlacement]);
+  }, [pathname, activeProjectId, activeApiUrl, activeBaseUrl, activePlacement]);
 
   return (
     <>
       <div
-        key={`${activeProjectId}-${activeApiUrl}-${activeBaseUrl}-${activePlacement}`}
+        key={`${pathname}-${activeProjectId}-${activeApiUrl}-${activeBaseUrl}-${activePlacement}`}
         {...{ "hamsa-webreader": "" }}
         data-projectid={activeProjectId}
         data-base-url={activeBaseUrl}
