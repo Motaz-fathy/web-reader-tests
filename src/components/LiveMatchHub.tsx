@@ -58,10 +58,10 @@ export default function LiveMatchHub({ initialEvents }: LiveMatchHubProps) {
         id: `ev-${Date.now()}`,
         minute: newMinute,
         type: 'goal',
-        title: isHome ? 'هدف جديد لأرسنال! ⚽🔥' : 'هدف لوست هام يونايتد! ⚽',
+        title: isHome ? 'هدف جديد لريال مدريد! ⚽🔥' : 'هدف لبرشلونة! ⚽',
         description: isHome
-          ? 'تسديدة خرافية لا تصد ولا ترد تسكن شباك الحارس وسط فرحة جنونية في المدرجات!'
-          : 'هجمة مرتدة نموذجية وتمريرة بينية متقنة تنهي الكرة داخل الشباك.',
+          ? 'تسديدة خرافية لا تصد ولا ترد تسكن شباك الحارس وسط فرحة جنونية في مدرجات البرنابيو!'
+          : 'هجمة كتالونية نموذجية وتمريرة بينية متقنة تنهي الكرة داخل الشباك.',
         timestamp: 'الآن مباشرة',
         team: isHome ? 'arsenal' : 'westham',
       };
@@ -71,7 +71,7 @@ export default function LiveMatchHub({ initialEvents }: LiveMatchHubProps) {
         minute: newMinute,
         type: 'var',
         title: 'مراجعة VAR حاسمة في الدقيقة ' + newMinute + ' 🖥️',
-        description: 'غرفة تقنية الفيديو تستدعي الحكم مايكل أوليفر لمراجعة شبهة خطأ قبل الهدف المحتسب.',
+        description: 'غرفة تقنية الفيديو تستدعي الحكم لمراجعة شبهة تسلل قبل تسجيل الهدف.',
         timestamp: 'الآن مباشرة',
         team: 'referee',
       };
@@ -81,7 +81,7 @@ export default function LiveMatchHub({ initialEvents }: LiveMatchHubProps) {
         minute: newMinute,
         type: 'card',
         title: 'بطاقة صفراء جديدة 🟨',
-        description: 'الحكم يشهر البطاقة الصفراء بسبب إضاعة الوقت والاعتراض المبالغ فيه.',
+        description: 'الحكم يشهر البطاقة الصفراء بعد تدخل تكتيكي لمنع هجمة مرتدة واعدة.',
         timestamp: 'الآن مباشرة',
         team: 'westham',
       };
@@ -161,10 +161,10 @@ export default function LiveMatchHub({ initialEvents }: LiveMatchHubProps) {
         <div className="grid grid-cols-3 items-center text-center py-2">
           {/* Home Team */}
           <div className="space-y-1">
-            <div className="w-12 h-12 sm:w-14 sm:h-14 mx-auto rounded-full bg-red-950 border-2 border-red-600 flex items-center justify-center font-bold text-base sm:text-lg text-white shadow-md">
-              ARS
+            <div className="w-12 h-12 sm:w-14 sm:h-14 mx-auto rounded-full bg-blue-950 border-2 border-blue-400 flex items-center justify-center font-bold text-base sm:text-lg text-white shadow-md">
+              RMA
             </div>
-            <h4 className="font-bold text-sm sm:text-base font-cairo text-white">أرسنال</h4>
+            <h4 className="font-bold text-sm sm:text-base font-cairo text-white">ريال مدريد</h4>
             <span className="text-[11px] text-neutral-400">المتصدر</span>
           </div>
 
@@ -176,15 +176,15 @@ export default function LiveMatchHub({ initialEvents }: LiveMatchHubProps) {
             <div className="text-3xl sm:text-4xl font-black font-mono tracking-widest text-white">
               {homeScore} - {awayScore}
             </div>
-            <div className="text-[10px] text-emerald-400 font-medium">استاد الإمارات، لندن</div>
+            <div className="text-[10px] text-emerald-400 font-medium">سانتياغو برنابيو، مدريد</div>
           </div>
 
           {/* Away Team */}
           <div className="space-y-1">
-            <div className="w-12 h-12 sm:w-14 sm:h-14 mx-auto rounded-full bg-blue-950 border-2 border-blue-600 flex items-center justify-center font-bold text-base sm:text-lg text-white shadow-md">
-              WHU
+            <div className="w-12 h-12 sm:w-14 sm:h-14 mx-auto rounded-full bg-red-950 border-2 border-red-600 flex items-center justify-center font-bold text-base sm:text-lg text-white shadow-md">
+              FCB
             </div>
-            <h4 className="font-bold text-sm sm:text-base font-cairo text-white">وست هام</h4>
+            <h4 className="font-bold text-sm sm:text-base font-cairo text-white">برشلونة</h4>
             <span className="text-[11px] text-neutral-400">الضيف</span>
           </div>
         </div>
