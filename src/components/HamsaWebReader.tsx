@@ -18,13 +18,19 @@ interface HamsaWebReaderProps {
 const DEFAULT_PROJECT_ID = "a5314154-eb11-429e-9b0f-6cfaf459e671";
 const DEFAULT_API_URL =
   process.env.NEXT_PUBLIC_HAMSA_API_URL || "https://api-dev.tryhamsa.com";
+
+// لتجربة الكود المعدّل محلياً، نوجّه الـ baseUrl إلى سيرفرك المحلي "http://localhost:5173"
 const DEFAULT_BASE_URL =
   process.env.NEXT_PUBLIC_HAMSA_BASE_URL ||
   (typeof window !== "undefined" &&
   (window.location.hostname === "localhost" ||
     window.location.hostname === "127.0.0.1")
-    ? "https://media-dev.tryhamsa.com"
+    ? "http://localhost:5173"
     : "https://media-dev.tryhamsa.com");
+
+// رابط السكربت المرفوع حديثاً
+const SCRIPT_URL =
+  "https://9ybada9fmz.ufs.sh/f/VY646fLJrcPpiHxYxbDqUafFkpOlnerB3CoY8AxsM24WudcE";
 
 function HamsaWebReaderContent({
   projectId = DEFAULT_PROJECT_ID,
@@ -39,8 +45,6 @@ function HamsaWebReaderContent({
   const searchParams = useSearchParams();
   const pathname = usePathname();
 
-  // Allow URL query params override for easy testing on any environment:
-  // ?projectId=...&apiUrl=...&baseUrl=...&theme=...
   const activeProjectId = searchParams.get("projectId") || projectId;
   const activeApiUrl = searchParams.get("apiUrl") || apiUrl;
   const activeBaseUrl = searchParams.get("baseUrl") || baseUrl;
@@ -48,11 +52,13 @@ function HamsaWebReaderContent({
   const activePlacement =
     (searchParams.get("placement") as "floating" | "inline") || placement;
 
-  // Re-trigger initialization on client-side navigation or param changes
   useEffect(() => {
     if (typeof window !== "undefined") {
       const win = window as any;
-      const reinit = win.HamsaWebReader?.reinit || win.HamsaWebReader?.init || win.__hamsaWebReaderMount;
+      const reinit =
+        win.HamsaWebReader?.reinit ||
+        win.HamsaWebReader?.init ||
+        win.__hamsaWebReaderMount;
       if (typeof reinit === "function") {
         try {
           reinit();
@@ -77,10 +83,7 @@ function HamsaWebReaderContent({
         data-ui-language={uiLanguage}
         className={className}
       />
-      <Script
-        src={`${activeBaseUrl}/webreader.js`}
-        strategy="afterInteractive"
-      />
+      <Script src={SCRIPT_URL} strategy="afterInteractive" />
     </>
   );
 }

@@ -40,6 +40,7 @@ export default function Header() {
     { label: 'تحليل البريميرليغ (ISR)', href: '/articles/isr-premier-league', badge: 'ISR / مجدد' },
     { label: 'عاجل (SSR)', href: '/articles/ssr-breaking-news', badge: 'SSR / خادمي' },
     { label: 'تغطية حية (CSR)', href: '/articles/csr-live-match', badge: 'CSR / عميل', live: true },
+    { label: 'مختبر الاستريم', href: '/stream-tester', badge: 'Stream Lab' },
     { label: 'دليل أنماط الرندرة', href: '/compare' },
   ];
 
