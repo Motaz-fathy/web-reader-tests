@@ -30,7 +30,7 @@ const DEFAULT_BASE_URL =
 
 // رابط السكربت المرفوع حديثاً
 const SCRIPT_URL =
-  "https://9ybada9fmz.ufs.sh/f/VY646fLJrcPpiHxYxbDqUafFkpOlnerB3CoY8AxsM24WudcE";
+  "https://22a9a3c2.web-reader-cdn-test.pages.dev/web-reader-cdn.js";
 
 function HamsaWebReaderContent({
   projectId = DEFAULT_PROJECT_ID,
