@@ -19,14 +19,13 @@ const DEFAULT_PROJECT_ID = "a5314154-eb11-429e-9b0f-6cfaf459e671";
 const DEFAULT_API_URL =
   process.env.NEXT_PUBLIC_HAMSA_API_URL || "https://api-dev.tryhamsa.com";
 
-// لتجربة الكود المعدّل محلياً، نوجّه الـ baseUrl إلى سيرفرك المحلي "http://localhost:5173"
 const DEFAULT_BASE_URL =
-  process.env.NEXT_PUBLIC_HAMSA_BASE_URL ||
-  (typeof window !== "undefined" &&
+  typeof window !== "undefined" &&
   (window.location.hostname === "localhost" ||
     window.location.hostname === "127.0.0.1")
     ? "http://localhost:5173"
-    : "https://media-dev.tryhamsa.com");
+    : process.env.NEXT_PUBLIC_HAMSA_BASE_URL ||
+      "https://media-dev.tryhamsa.com";
 
 // رابط السكربت المرفوع حديثاً
 const SCRIPT_URL =
