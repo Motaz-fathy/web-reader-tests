@@ -1,0 +1,300 @@
+{
+  "articles": {
+    "c3r0eyydnwgo": {
+      "id": "c3r0eyydnwgo",
+      "slug": "c3r0eyydnwgo",
+      "title": "Premier League to Publish Referee Review Assessments and VAR Incident Decisions",
+      "lead": "For the first time this season, the Premier League’s Key Match Incidents Panel will publish its weekly evaluations of refereeing and VAR decisions following each match round.",
+      "category": "Sports",
+      "categorySlug": "sport",
+      "publishedAt": "2026-08-19T02:59:37.001Z",
+      "modifiedAt": "2026-08-19T02:59:37.001Z",
+      "readingTimeMinutes": 4,
+      "author": {
+        "name": "Dale Johnson",
+        "role": "Refereeing & Laws Analyst - BBC Sport",
+        "socialHandle": "@dalejohnsonESPN"
+      },
+      "mainImage": {
+        "url": "https://ichef.bbci.co.uk/news/1024/branded_arabic/d48c/live/f65fe750-9ae3-11f1-b2f7-5d1639b20e22.jpg",
+        "caption": "Arsenal player Gabriel protests to referee Michael Oliver after a penalty decision during the match against West Ham United.",
+        "credit": "Getty Images / BBC News",
+        "alt": "Arsenal player Gabriel protesting referee decision"
+      },
+      "audioDuration": "3:45",
+      "fullText": "For the first time this season, evaluations by the Premier League's Key Match Incidents (KMI) Panel regarding refereeing decisions will be published. This unprecedented step aims to enhance transparency and provide clear insights for fans and clubs on how pivotal decisions are made on the pitch and in VAR rooms.\n\nThe independent Key Match Incidents Panel consists of five members, including three former players or managers, a Premier League representative, and a Professional Game Match Officials Limited (PGMOL) representative. The panel meets weekly to analyze all controversial clips.\n\nAccording to official data from last season, VAR intervened correctly in 104 instances, while the panel identified 11 clear refereeing errors that went uncorrected—representing a 35% reduction compared to previous seasons.\n\nHoward Webb, Chief Refereeing Officer at PGMOL, emphasized that the primary goal is to minimize unnecessary interventions and focus strictly on 'clear and obvious errors,' noting that the deployment of Semi-Automated Offside Technology (SAOT) will speed up decision-making by an average of 30 seconds per offside case.",
+      "sections": [
+        {
+          "heading": "Full Transparency and Weekly Publishing of Decisions",
+          "content": [
+            "The Premier League announced that evaluations from the Key Match Incidents Panel will be made available to the public and media regularly, 48 hours after the conclusion of each match round.",
+            "This policy aims to quell debate over double standards and reduce fan friction, particularly regarding controversial penalties, direct red cards, and tight offside calls."
+          ],
+          "quote": {
+            "text": "The fans deserve to understand how and why a decision was reached; transparency is the only way to build trust in refereeing and VAR.",
+            "author": "Howard Webb - Chief Refereeing Officer, PGMOL"
+          }
+        },
+        {
+          "heading": "How Does the Key Match Incidents (KMI) Panel Work?",
+          "content": [
+            "The panel comprises five independent members carefully selected to ensure integrity and sporting neutrality:",
+            "1. Three former international players and managers with broad field experience.",
+            "2. A refereeing expert representing the PGMOL.",
+            "3. An independent representative from the Premier League clubs.",
+            "Each member votes individually and independently on whether the referee's call on the field was correct and whether VAR intervention was warranted under IFAB protocols."
+          ],
+          "callout": {
+            "type": "stats",
+            "title": "Key VAR Statistics for 2025/2026 Season",
+            "text": "Overall decision accuracy reached 96.2% following VAR reviews, with average offside review times reduced to 28 seconds thanks to semi-automated technology."
+          }
+        },
+        {
+          "heading": "Semi-Automated Offside Technology Goes Live",
+          "content": [
+            "This season also marks the full rollout of Semi-Automated Offside Technology (SAOT), leveraging 12 specialized roof-mounted cameras to track the ball and up to 29 biometric body points on each player 50 times per second.",
+            "This system generates 3D offside lines instantaneously and broadcasts them to stadium screens and TV feeds within seconds."
+          ]
+        }
+      ],
+      "tags": ["Premier League", "Football", "VAR Technology", "Refereeing", "Arsenal", "Howard Webb"],
+      "varStats": [
+        { "category": "Penalties Awarded After VAR", "total": 42, "correct": 39, "overturned": 3, "percentage": 92.8 },
+        { "category": "Goals Disallowed for Offside", "total": 58, "correct": 57, "overturned": 1, "percentage": 98.2 },
+        { "category": "Direct Red Cards Issued", "total": 18, "correct": 16, "overturned": 2, "percentage": 88.9 },
+        { "category": "Handball Incidents in Box", "total": 31, "correct": 28, "overturned": 3, "percentage": 90.3 }
+      ],
+      "renderMode": "GSR",
+      "renderModeDescription": "Generated Static Rendering (SSG) - This page was pre-built entirely as static HTML at build time for instant responses with zero server load."
+    },
+    "isr-premier-league": {
+      "id": "isr-premier-league",
+      "slug": "isr-premier-league",
+      "title": "Weekly Premier League Analysis: Title Race Heats Up with Manager Stats in Decisive Round",
+      "lead": "A periodic analytical report automatically revalidated every 30 seconds via ISR, featuring the latest league standings, points ratios, and exclusive manager statements.",
+      "category": "Sports",
+      "categorySlug": "sport",
+      "publishedAt": "2026-08-19T06:00:00.000Z",
+      "modifiedAt": "2026-08-19T06:00:00.000Z",
+      "readingTimeMinutes": 5,
+      "author": {
+        "name": "Sami Al-Shami",
+        "role": "English Sports Editor - BBC News",
+        "socialHandle": "@sami_bbc"
+      },
+      "mainImage": {
+        "url": "https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=1200&q=80",
+        "caption": "Celebrations following a dramatic late win in the Premier League match of the weekend.",
+        "credit": "Reuters / BBC Sport",
+        "alt": "Premier League players celebrating"
+      },
+      "audioDuration": "4:12",
+      "fullText": "Excitement continues to build in the Premier League as the race among the top four intensifies. This report relies on tactical performance metrics and possession statistics updated after the latest round.\n\nThis page updates using Next.js Incremental Static Regeneration (ISR) every 30 seconds, delivering super-fast static content while revalidating data in the background.",
+      "sections": [
+        {
+          "heading": "High Pressing Tactics and Their Impact on the Table",
+          "content": [
+            "Analytical data reveals that teams applying high pressure in the attacking third achieved over a 74% win rate across the last three matchdays.",
+            "Arsenal, Manchester City, and Liverpool's frontlines recovered the ball an average of 8.4 times per 90 minutes in dangerous opposition areas."
+          ],
+          "quote": {
+            "text": "Modern football is no longer just about individual skill, but about transition speed, smart positioning, and space exploitation.",
+            "author": "Pep Guardiola - Manchester City Manager"
+          }
+        },
+        {
+          "heading": "Live Matchday Updates and Table Standings",
+          "content": [
+            "Points data, goal differences, and performance indicators automatically refresh in the background (Background Revalidation).",
+            "Users and editors can trigger On-demand Revalidation at the click of a button to see real-time changes."
+          ],
+          "callout": {
+            "type": "info",
+            "title": "How does ISR work on this page?",
+            "text": "The page delivers a cached version from the Edge CDN. After 30 seconds, Next.js triggers a background rebuild, updating the cache seamlessly for subsequent visitors."
+          }
+        }
+      ],
+      "tags": ["Premier League", "Tactical Analysis", "ISR", "Next.js", "Football"],
+      "renderMode": "ISR",
+      "renderModeDescription": "Incremental Static Regeneration (ISR) - Automatically rebuilds and updates cache every 30 seconds or via On-Demand Revalidate requests."
+    },
+    "ssr-breaking-news": {
+      "id": "ssr-breaking-news",
+      "slug": "ssr-breaking-news",
+      "title": "Breaking: Emergency Premier League Press Conference on Offside Rules and Injury Time",
+      "lead": "Dynamic server-side rendered (SSR) live coverage generated on every HTTP request, featuring server real-time timestamps and instant official briefings.",
+      "category": "Breaking News",
+      "categorySlug": "breaking",
+      "publishedAt": "2026-08-19T08:00:00.000Z",
+      "modifiedAt": "2026-08-19T08:00:00.000Z",
+      "readingTimeMinutes": 3,
+      "author": {
+        "name": "Breaking News Desk",
+        "role": "Central Newsroom - BBC News",
+        "socialHandle": "@bbcarabic_live"
+      },
+      "mainImage": {
+        "url": "https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=1200&q=80",
+        "caption": "Press conference underway at the Premier League headquarters in London.",
+        "credit": "BBC Newsroom Live",
+        "alt": "Emergency press conference in London"
+      },
+      "audioDuration": "2:30",
+      "fullText": "In a fast-moving development, the Premier League announced a series of crucial decisions during an emergency press conference in London that take immediate effect.\n\nThis page is built entirely using dynamic Server-Side Rendering (SSR) in Next.js via force-dynamic, rendering code on every request for exact time accuracy.",
+      "sections": [
+        {
+          "heading": "Key Decisions Announced at the Conference",
+          "content": [
+            "1. Capping goal celebration and VAR review times to prevent excessive stoppages.",
+            "2. Electronic countdown timer for goalkeepers holding the ball over 8 seconds.",
+            "3. Only team captains permitted to speak with the head referee during VAR reviews."
+          ],
+          "quote": {
+            "text": "Our goal is to protect the speed and joy of the game, delivering a broadcast experience fit for the world's top league.",
+            "author": "Richard Masters - Chief Executive, Premier League"
+          }
+        },
+        {
+          "heading": "Request-Time Page Generation (SSR Lifecycle)",
+          "content": [
+            "Data is fetched without server caching (no-store), enabling content customization based on user location and request metadata."
+          ],
+          "callout": {
+            "type": "warning",
+            "title": "Note on SSR Performance",
+            "text": "SSR provides 100% real-time accuracy, but TTFB depends on server rendering and database response speed for each request."
+          }
+        }
+      ],
+      "tags": ["Breaking", "Press Conference", "SSR", "Football Laws", "London"],
+      "renderMode": "SSR",
+      "renderModeDescription": "Server-Side Rendering (SSR) - Generates HTML dynamically on the server for each HTTP request without static caching."
+    },
+    "csr-live-match": {
+      "id": "csr-live-match",
+      "slug": "csr-live-match",
+      "title": "Live Coverage: El Clásico | Real Madrid vs Barcelona - Tactical Analysis & VAR Decisions Minute by Minute",
+      "lead": "Fully interactive Client-Side Rendered (CSR) page streaming El Clásico match events, substitutions, VAR decisions, and possession stats in real-time without reloading.",
+      "category": "Live Coverage",
+      "categorySlug": "live",
+      "publishedAt": "2026-08-19T10:00:00.000Z",
+      "modifiedAt": "2026-08-19T10:00:00.000Z",
+      "readingTimeMinutes": 15,
+      "author": {
+        "name": "Tariq Al-Ali",
+        "role": "Field Analyst & BBC Correspondent - Santiago Bernabéu",
+        "socialHandle": "@tariq_live_sport"
+      },
+      "mainImage": {
+        "url": "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=1200&q=80",
+        "caption": "Atmosphere inside the Santiago Bernabéu for the El Clásico showdown between Real Madrid and Barcelona.",
+        "credit": "Action Images / Reuters / BBC News",
+        "alt": "El Clásico Real Madrid vs Barcelona live coverage"
+      },
+      "audioDuration": "14:30",
+      "fullText": "Welcome to our live minute-by-minute coverage of El Clásico between Real Madrid and Barcelona, brought to you by BBC News via this interactive Client-Side Rendered (CSR) platform.\n\nThis page features instant client updates without document reloads, leveraging React state management for real-time match events.",
+      "sections": [
+        {
+          "heading": "Tactical Opening and Battle for Control in First Half",
+          "content": [
+            "The match kicked off amidst a electric atmosphere with over 80,000 fans at the Bernabéu.",
+            "Real Madrid absorbed Barcelona's high line with disciplined defending and sharp vertical counter-attacks."
+          ],
+          "quote": {
+            "text": "El Clásico is always decided by fine details and quick transitions; defensive focus is key to victory.",
+            "author": "Carlo Ancelotti - Half-time Technical Briefing"
+          }
+        }
+      ],
+      "tags": ["Live Coverage", "El Clasico", "Real Madrid", "Barcelona", "CSR", "Live Match", "La Liga"],
+      "renderMode": "CSR",
+      "renderModeDescription": "Client-Side Rendering (CSR) - The browser loads the interactive React shell, fetching live match data directly on the client device."
+    }
+  },
+  "mostRead": [
+    {
+      "rank": 1,
+      "title": "Premier League to Publish Referee Review Assessments and VAR Incident Decisions",
+      "category": "Sports",
+      "href": "/articles/c3r0eyydnwgo",
+      "viewsCount": "185K"
+    },
+    {
+      "rank": 2,
+      "title": "Live Coverage: El Clásico Minute by Minute | Real Madrid vs Barcelona Title Showdown & VAR Analysis",
+      "category": "Live Coverage",
+      "href": "/articles/csr-live-match",
+      "viewsCount": "142K"
+    },
+    {
+      "rank": 3,
+      "title": "Weekly Premier League Analysis: Title Race Heats Up with Manager Stats in Decisive Round",
+      "category": "Sports",
+      "href": "/articles/isr-premier-league",
+      "viewsCount": "98K"
+    },
+    {
+      "rank": 4,
+      "title": "Breaking: Emergency Premier League Press Conference on Offside Rules",
+      "category": "Breaking News",
+      "href": "/articles/ssr-breaking-news",
+      "viewsCount": "76K"
+    },
+    {
+      "rank": 5,
+      "title": "Stadium Tech: How 12 Smart Cameras Track 29 Body Points to Detect Offside?",
+      "category": "Science & Tech",
+      "href": "/articles/c3r0eyydnwgo",
+      "viewsCount": "63K"
+    }
+  ],
+  "liveEvents": [
+    {
+      "id": "ev-1",
+      "minute": 89,
+      "type": "goal",
+      "title": "Late Second Goal for Real Madrid! ⚽🔥",
+      "description": "Powerful low drive from the edge of the box into the bottom corner after a quick combination.",
+      "timestamp": "Seconds ago",
+      "team": "arsenal"
+    },
+    {
+      "id": "ev-2",
+      "minute": 84,
+      "type": "var",
+      "title": "VAR Review: Penalty Overturned for Real Madrid 🖥️",
+      "description": "Referee checks on-field monitor and rules no intentional handball as defender's arm was tucked in.",
+      "timestamp": "5 mins ago",
+      "team": "referee"
+    },
+    {
+      "id": "ev-3",
+      "minute": 58,
+      "type": "goal",
+      "title": "Equalizer Goal for Barcelona! ⚽",
+      "description": "Sublime through ball from Lamine Yamal finished calmly past the goalkeeper.",
+      "timestamp": "31 mins ago",
+      "team": "westham"
+    },
+    {
+      "id": "ev-4",
+      "minute": 45,
+      "type": "whistle",
+      "title": "Half-time: Real Madrid Lead 1-0 ⏱️",
+      "description": "Fast-paced first half with tactical discipline and dangerous counter-attacks.",
+      "timestamp": "45 mins ago",
+      "team": "referee"
+    },
+    {
+      "id": "ev-5",
+      "minute": 34,
+      "type": "goal",
+      "title": "Opening Goal for Real Madrid! ⚽",
+      "description": "Breakthrough down the left flank finished with a clinical strike into the far corner.",
+      "timestamp": "55 mins ago",
+      "team": "arsenal"
+    }
+  ]
+}

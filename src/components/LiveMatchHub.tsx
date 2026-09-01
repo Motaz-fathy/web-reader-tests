@@ -2,19 +2,12 @@
 
 import React, { useState, useEffect } from 'react';
 import { LiveEvent } from '@/types';
-import { sampleLiveEvents } from '@/data/articles';
+import { useLanguage } from '@/context/LanguageContext';
 import { 
   Play, 
   Pause, 
   Plus, 
   Filter, 
-  Activity, 
-  Sparkles, 
-  Radio, 
-  ShieldAlert, 
-  RefreshCw,
-  Trophy,
-  Volume2
 } from 'lucide-react';
 
 interface LiveMatchHubProps {
@@ -22,7 +15,10 @@ interface LiveMatchHubProps {
 }
 
 export default function LiveMatchHub({ initialEvents }: LiveMatchHubProps) {
-  const [events, setEvents] = useState<LiveEvent[]>(initialEvents || sampleLiveEvents);
+  const { articlesData } = useLanguage();
+  const sampleEvents = articlesData?.liveEvents || [];
+
+  const [events, setEvents] = useState<LiveEvent[]>(initialEvents || sampleEvents);
   const [filter, setFilter] = useState<'all' | 'goal' | 'var' | 'card' | 'sub'>('all');
   const [isLiveActive, setIsLiveActive] = useState(true);
   const [matchMinute, setMatchMinute] = useState(90);
@@ -30,12 +26,18 @@ export default function LiveMatchHub({ initialEvents }: LiveMatchHubProps) {
   const [awayScore, setAwayScore] = useState(1);
   const [latestEventFlash, setLatestEventFlash] = useState<string | null>(null);
 
+  // Sync events if sampleEvents changes due to language change
+  useEffect(() => {
+    if (!initialEvents && sampleEvents.length > 0) {
+      setEvents(sampleEvents);
+    }
+  }, [sampleEvents, initialEvents]);
+
   // Auto add simulated events periodically if live is active
   useEffect(() => {
     if (!isLiveActive) return;
 
     const interval = setInterval(() => {
-      // Advance match minute slightly
       setMatchMinute((prev) => (prev < 95 ? prev + 1 : 90));
     }, 15000);
 
@@ -60,8 +62,8 @@ export default function LiveMatchHub({ initialEvents }: LiveMatchHubProps) {
         type: 'goal',
         title: isHome ? 'هدف جديد لريال مدريد! ⚽🔥' : 'هدف لبرشلونة! ⚽',
         description: isHome
-          ? 'تسديدة خرافية لا تصد ولا ترد تسكن شباك الحارس وسط فرحة جنونية في مدرجات البرنابيو!'
-          : 'هجمة كتالونية نموذجية وتمريرة بينية متقنة تنهي الكرة داخل الشباك.',
+          ? 'تسديدة خرافية تسكن شباك الحارس وسط فرحة جنونية!'
+          : 'هجمة نموذجية وتمريرة بينية متقنة تنهي الكرة داخل الشباك.',
         timestamp: 'الآن مباشرة',
         team: isHome ? 'arsenal' : 'westham',
       };
@@ -110,17 +112,17 @@ export default function LiveMatchHub({ initialEvents }: LiveMatchHubProps) {
   const getEventBadge = (type: LiveEvent['type']) => {
     switch (type) {
       case 'goal':
-        return { label: 'هدف', bg: 'bg-emerald-600 text-white', icon: '⚽' };
+        return { label: 'Goal', bg: 'bg-emerald-600 text-white', icon: '⚽' };
       case 'var':
         return { label: 'VAR', bg: 'bg-purple-600 text-white', icon: '🖥️' };
       case 'card':
-        return { label: 'بطاقة', bg: 'bg-amber-500 text-neutral-900', icon: '🟨' };
+        return { label: 'Card', bg: 'bg-amber-500 text-neutral-900', icon: '🟨' };
       case 'sub':
-        return { label: 'تبديل', bg: 'bg-blue-600 text-white', icon: '🔄' };
+        return { label: 'Sub', bg: 'bg-blue-600 text-white', icon: '🔄' };
       case 'whistle':
-        return { label: 'صافرة', bg: 'bg-neutral-700 text-white', icon: '⏱️' };
+        return { label: 'Whistle', bg: 'bg-neutral-700 text-white', icon: '⏱️' };
       default:
-        return { label: 'معلومة', bg: 'bg-neutral-600 text-white', icon: '📌' };
+        return { label: 'Info', bg: 'bg-neutral-600 text-white', icon: '📌' };
     }
   };
 
@@ -135,7 +137,7 @@ export default function LiveMatchHub({ initialEvents }: LiveMatchHubProps) {
               <span className="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
             </span>
             <span className="text-xs font-black tracking-wider text-red-400 uppercase font-mono">
-              تغطية حية ومباشرة (CSR Realtime)
+              CSR Realtime Match Hub
             </span>
           </div>
 
@@ -146,11 +148,11 @@ export default function LiveMatchHub({ initialEvents }: LiveMatchHubProps) {
             >
               {isLiveActive ? (
                 <>
-                  <Pause className="w-3 h-3 text-red-400" /> <span>إيقاف البث الحي</span>
+                  <Pause className="w-3 h-3 text-red-400" /> <span>Pause</span>
                 </>
               ) : (
                 <>
-                  <Play className="w-3 h-3 text-emerald-400" /> <span>استئناف البث</span>
+                  <Play className="w-3 h-3 text-emerald-400" /> <span>Resume</span>
                 </>
               )}
             </button>
@@ -164,19 +166,18 @@ export default function LiveMatchHub({ initialEvents }: LiveMatchHubProps) {
             <div className="w-12 h-12 sm:w-14 sm:h-14 mx-auto rounded-full bg-blue-950 border-2 border-blue-400 flex items-center justify-center font-bold text-base sm:text-lg text-white shadow-md">
               RMA
             </div>
-            <h4 className="font-bold text-sm sm:text-base font-cairo text-white">ريال مدريد</h4>
-            <span className="text-[11px] text-neutral-400">المتصدر</span>
+            <h4 className="font-bold text-sm sm:text-base font-cairo text-white">Real Madrid</h4>
           </div>
 
           {/* Center Score & Minute */}
           <div className="space-y-1">
             <div className="inline-block bg-neutral-900 border border-neutral-700 px-3 py-1 rounded-full text-xs font-mono text-amber-400 font-bold">
-              الدقيقة {matchMinute}&apos; +4
+              Min {matchMinute}&apos; +4
             </div>
             <div className="text-3xl sm:text-4xl font-black font-mono tracking-widest text-white">
               {homeScore} - {awayScore}
             </div>
-            <div className="text-[10px] text-emerald-400 font-medium">سانتياغو برنابيو، مدريد</div>
+            <div className="text-[10px] text-emerald-400 font-medium">Santiago Bernabéu</div>
           </div>
 
           {/* Away Team */}
@@ -184,22 +185,21 @@ export default function LiveMatchHub({ initialEvents }: LiveMatchHubProps) {
             <div className="w-12 h-12 sm:w-14 sm:h-14 mx-auto rounded-full bg-red-950 border-2 border-red-600 flex items-center justify-center font-bold text-base sm:text-lg text-white shadow-md">
               FCB
             </div>
-            <h4 className="font-bold text-sm sm:text-base font-cairo text-white">برشلونة</h4>
-            <span className="text-[11px] text-neutral-400">الضيف</span>
+            <h4 className="font-bold text-sm sm:text-base font-cairo text-white">Barcelona</h4>
           </div>
         </div>
 
         {/* Live Event Simulator Action */}
         <div className="mt-4 pt-3 border-t border-neutral-800 flex flex-wrap items-center justify-between gap-2">
           <span className="text-xs text-neutral-400">
-            تحديثات فورية في المتصفح دون إعادة تحميل الصفحة (CSR)
+            Realtime client updates without page reload (CSR)
           </span>
           <button
             onClick={handleSimulateNewEvent}
             className="px-3 py-1.5 rounded-lg bg-bbc-red hover:bg-bbc-darkred text-white text-xs font-bold transition flex items-center gap-1.5 shadow-md transform active:scale-95"
           >
             <Plus className="w-3.5 h-3.5" />
-            <span>محاكاة حدث فوري بالمباراة (CSR Action)</span>
+            <span>Simulate Live Event</span>
           </button>
         </div>
       </div>
@@ -214,7 +214,7 @@ export default function LiveMatchHub({ initialEvents }: LiveMatchHubProps) {
               filter === 'all' ? 'bg-bbc-red text-white' : 'text-neutral-400 hover:text-white'
             }`}
           >
-            جميع الأحداث ({events.length})
+            All ({events.length})
           </button>
           <button
             onClick={() => setFilter('goal')}
@@ -222,7 +222,7 @@ export default function LiveMatchHub({ initialEvents }: LiveMatchHubProps) {
               filter === 'goal' ? 'bg-emerald-600 text-white' : 'text-neutral-400 hover:text-white'
             }`}
           >
-            ⚽ أهداف
+            ⚽ Goals
           </button>
           <button
             onClick={() => setFilter('var')}
@@ -230,7 +230,7 @@ export default function LiveMatchHub({ initialEvents }: LiveMatchHubProps) {
               filter === 'var' ? 'bg-purple-600 text-white' : 'text-neutral-400 hover:text-white'
             }`}
           >
-            🖥️ تقنية VAR
+            🖥️ VAR
           </button>
           <button
             onClick={() => setFilter('card')}
@@ -238,7 +238,7 @@ export default function LiveMatchHub({ initialEvents }: LiveMatchHubProps) {
               filter === 'card' ? 'bg-amber-600 text-white' : 'text-neutral-400 hover:text-white'
             }`}
           >
-            🟨 بطاقات
+            🟨 Cards
           </button>
           <button
             onClick={() => setFilter('sub')}
@@ -246,12 +246,12 @@ export default function LiveMatchHub({ initialEvents }: LiveMatchHubProps) {
               filter === 'sub' ? 'bg-blue-600 text-white' : 'text-neutral-400 hover:text-white'
             }`}
           >
-            🔄 تبديلات
+            🔄 Subs
           </button>
         </div>
 
         <span className="text-[11px] text-neutral-500 font-mono hidden sm:inline-block">
-          {filteredEvents.length} أحداث معروضة
+          {filteredEvents.length} events
         </span>
       </div>
 
@@ -293,12 +293,6 @@ export default function LiveMatchHub({ initialEvents }: LiveMatchHubProps) {
             </div>
           );
         })}
-
-        {filteredEvents.length === 0 && (
-          <div className="text-center py-8 text-neutral-500 text-xs">
-            لا توجد أحداث مطابقة لهذا الفلتر حالياً.
-          </div>
-        )}
       </div>
     </div>
   );

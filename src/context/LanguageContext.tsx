@@ -9,6 +9,7 @@ import arArticle from '../../public/ar/article.json';
 import arCompare from '../../public/ar/compare.json';
 import arStreamTester from '../../public/ar/streamTester.json';
 import arCategory from '../../public/ar/category.json';
+import arArticlesData from '../../public/ar/articlesData.json';
 
 import enCommon from '../../public/en/common.json';
 import enHome from '../../public/en/home.json';
@@ -16,6 +17,7 @@ import enArticle from '../../public/en/article.json';
 import enCompare from '../../public/en/compare.json';
 import enStreamTester from '../../public/en/streamTester.json';
 import enCategory from '../../public/en/category.json';
+import enArticlesData from '../../public/en/articlesData.json';
 
 export type Language = 'ar' | 'en';
 export type Direction = 'rtl' | 'ltr';
@@ -28,6 +30,7 @@ const translationsMap: Record<Language, Record<string, any>> = {
     compare: arCompare,
     streamTester: arStreamTester,
     category: arCategory,
+    articlesData: arArticlesData,
   },
   en: {
     common: enCommon,
@@ -36,6 +39,7 @@ const translationsMap: Record<Language, Record<string, any>> = {
     compare: enCompare,
     streamTester: enStreamTester,
     category: enCategory,
+    articlesData: enArticlesData,
   },
 };
 
@@ -44,6 +48,7 @@ interface LanguageContextType {
   dir: Direction;
   setLanguage: (lang: Language) => void;
   t: (key: string, ns?: string, params?: Record<string, string | number>) => string;
+  articlesData: typeof arArticlesData;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
@@ -115,9 +120,10 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   };
 
   const dir: Direction = language === 'ar' ? 'rtl' : 'ltr';
+  const articlesData = translationsMap[language]?.articlesData || arArticlesData;
 
   return (
-    <LanguageContext.Provider value={{ language, dir, setLanguage, t }}>
+    <LanguageContext.Provider value={{ language, dir, setLanguage, t, articlesData }}>
       {children}
     </LanguageContext.Provider>
   );

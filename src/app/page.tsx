@@ -2,9 +2,9 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { bbcArticles, mostReadArticles } from '@/data/articles';
 import RenderModeBadge from '@/components/RenderModeBadge';
 import { useLanguage } from '@/context/LanguageContext';
+import { Article } from '@/types';
 import { 
   Sparkles, 
   RefreshCw, 
@@ -22,12 +22,15 @@ import {
 } from 'lucide-react';
 
 export default function HomePage() {
-  const { t, language } = useLanguage();
+  const { t, language, articlesData } = useLanguage();
   
-  const mainStory = bbcArticles['c3r0eyydnwgo'];
-  const isrStory = bbcArticles['isr-premier-league'];
-  const ssrStory = bbcArticles['ssr-breaking-news'];
-  const csrStory = bbcArticles['csr-live-match'];
+  const articlesMap = (articlesData?.articles as unknown as Record<string, Article>) || {};
+  const mainStory = articlesMap['c3r0eyydnwgo'] || {};
+  const isrStory = articlesMap['isr-premier-league'] || {};
+  const ssrStory = articlesMap['ssr-breaking-news'] || {};
+  const csrStory = articlesMap['csr-live-match'] || {};
+
+  const mostReadList = articlesData?.mostRead || [];
 
   const ArrowIcon = language === 'ar' ? ArrowLeft : ArrowRight;
   const ChevronIcon = language === 'ar' ? ChevronLeft : ChevronRight;
@@ -133,56 +136,58 @@ export default function HomePage() {
               <h2 className="text-xl sm:text-2xl font-black font-cairo text-neutral-950">
                 {t('featured.heading', 'home')}
               </h2>
-              <RenderModeBadge mode={mainStory.renderMode} size="sm" />
+              {mainStory.renderMode && <RenderModeBadge mode={mainStory.renderMode} size="sm" />}
             </div>
 
             {/* Featured Article Card */}
-            <article className="group bg-white rounded-2xl border border-neutral-200 overflow-hidden shadow-sm hover:shadow-md transition">
-              <div className="relative aspect-[16/9] w-full overflow-hidden bg-neutral-200">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={mainStory.mainImage.url}
-                  alt={mainStory.mainImage.alt}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute top-3 ltr:left-3 rtl:right-3">
-                  <span className="bg-bbc-red text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">
-                    {mainStory.category}
-                  </span>
-                </div>
-              </div>
-
-              <div className="p-6 space-y-3">
-                <div className="flex items-center gap-2 text-xs text-neutral-500 font-mono">
-                  <Clock className="w-3.5 h-3.5" />
-                  <span>{t('featured.readTime', 'home', { minutes: mainStory.readingTimeMinutes })}</span>
-                  <span>•</span>
-                  <span>{t('featured.author', 'home', { name: mainStory.author.name })}</span>
+            {mainStory.title && (
+              <article className="group bg-white rounded-2xl border border-neutral-200 overflow-hidden shadow-sm hover:shadow-md transition">
+                <div className="relative aspect-[16/9] w-full overflow-hidden bg-neutral-200">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={mainStory.mainImage?.url}
+                    alt={mainStory.mainImage?.alt || mainStory.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute top-3 ltr:left-3 rtl:right-3">
+                    <span className="bg-bbc-red text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">
+                      {mainStory.category}
+                    </span>
+                  </div>
                 </div>
 
-                <Link href={`/articles/${mainStory.slug}`}>
-                  <h3 className="text-xl sm:text-2xl font-bold font-cairo text-neutral-950 group-hover:text-bbc-red transition leading-snug">
-                    {mainStory.title}
-                  </h3>
-                </Link>
+                <div className="p-6 space-y-3">
+                  <div className="flex items-center gap-2 text-xs text-neutral-500 font-mono">
+                    <Clock className="w-3.5 h-3.5" />
+                    <span>{t('featured.readTime', 'home', { minutes: mainStory.readingTimeMinutes || 4 })}</span>
+                    <span>•</span>
+                    <span>{t('featured.author', 'home', { name: mainStory.author?.name || '' })}</span>
+                  </div>
 
-                <p className="text-neutral-600 text-sm leading-relaxed line-clamp-3">
-                  {mainStory.lead}
-                </p>
-
-                <div className="pt-4 flex items-center justify-between border-t border-neutral-100">
-                  <Link
-                    href={`/articles/${mainStory.slug}`}
-                    className="inline-flex items-center gap-1.5 text-bbc-red hover:text-bbc-darkred font-bold text-sm"
-                  >
-                    <span>{t('featured.readFull', 'home')}</span>
-                    <ChevronIcon className="w-4 h-4" />
+                  <Link href={`/articles/${mainStory.slug}`}>
+                    <h3 className="text-xl sm:text-2xl font-bold font-cairo text-neutral-950 group-hover:text-bbc-red transition leading-snug">
+                      {mainStory.title}
+                    </h3>
                   </Link>
 
-                  <RenderModeBadge mode={mainStory.renderMode} size="sm" />
+                  <p className="text-neutral-600 text-sm leading-relaxed line-clamp-3">
+                    {mainStory.lead}
+                  </p>
+
+                  <div className="pt-4 flex items-center justify-between border-t border-neutral-100">
+                    <Link
+                      href={`/articles/${mainStory.slug}`}
+                      className="inline-flex items-center gap-1.5 text-bbc-red hover:text-bbc-darkred font-bold text-sm"
+                    >
+                      <span>{t('featured.readFull', 'home')}</span>
+                      <ChevronIcon className="w-4 h-4" />
+                    </Link>
+
+                    {mainStory.renderMode && <RenderModeBadge mode={mainStory.renderMode} size="sm" />}
+                  </div>
                 </div>
-              </div>
-            </article>
+              </article>
+            )}
 
             {/* Other 3 Mode Cards Grid */}
             <div className="space-y-4 pt-4">
@@ -192,64 +197,70 @@ export default function HomePage() {
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 {/* ISR Card */}
-                <Link
-                  href={`/articles/${isrStory.slug}`}
-                  className="bg-white p-4 rounded-xl border border-neutral-200 hover:border-purple-500 hover:shadow-md transition space-y-2.5 flex flex-col justify-between group"
-                >
-                  <div className="space-y-2">
-                    <div className="flex items-center justify-between">
-                      <span className="text-xs font-bold text-purple-700">{t('remaining.isrBadge', 'home')}</span>
-                      <RenderModeBadge mode="ISR" size="sm" showIcon={false} />
+                {isrStory.title && (
+                  <Link
+                    href={`/articles/${isrStory.slug}`}
+                    className="bg-white p-4 rounded-xl border border-neutral-200 hover:border-purple-500 hover:shadow-md transition space-y-2.5 flex flex-col justify-between group"
+                  >
+                    <div className="space-y-2">
+                      <div className="flex items-center justify-between">
+                        <span className="text-xs font-bold text-purple-700">{t('remaining.isrBadge', 'home')}</span>
+                        <RenderModeBadge mode="ISR" size="sm" showIcon={false} />
+                      </div>
+                      <h4 className="font-bold text-sm text-neutral-900 group-hover:text-purple-700 transition line-clamp-2 font-cairo">
+                        {isrStory.title}
+                      </h4>
+                      <p className="text-xs text-neutral-600 line-clamp-2">{isrStory.lead}</p>
                     </div>
-                    <h4 className="font-bold text-sm text-neutral-900 group-hover:text-purple-700 transition line-clamp-2 font-cairo">
-                      {isrStory.title}
-                    </h4>
-                    <p className="text-xs text-neutral-600 line-clamp-2">{isrStory.lead}</p>
-                  </div>
-                  <span className="text-xs text-purple-600 font-bold flex items-center gap-1 pt-2 border-t border-neutral-100">
-                    {t('remaining.isrLink', 'home')}
-                  </span>
-                </Link>
+                    <span className="text-xs text-purple-600 font-bold flex items-center gap-1 pt-2 border-t border-neutral-100">
+                      {t('remaining.isrLink', 'home')}
+                    </span>
+                  </Link>
+                )}
 
                 {/* SSR Card */}
-                <Link
-                  href={`/articles/${ssrStory.slug}`}
-                  className="bg-white p-4 rounded-xl border border-neutral-200 hover:border-amber-500 hover:shadow-md transition space-y-2.5 flex flex-col justify-between group"
-                >
-                  <div className="space-y-2">
-                    <div className="flex items-center justify-between">
-                      <span className="text-xs font-bold text-amber-700">{t('remaining.ssrBadge', 'home')}</span>
-                      <RenderModeBadge mode="SSR" size="sm" showIcon={false} />
+                {ssrStory.title && (
+                  <Link
+                    href={`/articles/${ssrStory.slug}`}
+                    className="bg-white p-4 rounded-xl border border-neutral-200 hover:border-amber-500 hover:shadow-md transition space-y-2.5 flex flex-col justify-between group"
+                  >
+                    <div className="space-y-2">
+                      <div className="flex items-center justify-between">
+                        <span className="text-xs font-bold text-amber-700">{t('remaining.ssrBadge', 'home')}</span>
+                        <RenderModeBadge mode="SSR" size="sm" showIcon={false} />
+                      </div>
+                      <h4 className="font-bold text-sm text-neutral-900 group-hover:text-amber-700 transition line-clamp-2 font-cairo">
+                        {ssrStory.title}
+                      </h4>
+                      <p className="text-xs text-neutral-600 line-clamp-2">{ssrStory.lead}</p>
                     </div>
-                    <h4 className="font-bold text-sm text-neutral-900 group-hover:text-amber-700 transition line-clamp-2 font-cairo">
-                      {ssrStory.title}
-                    </h4>
-                    <p className="text-xs text-neutral-600 line-clamp-2">{ssrStory.lead}</p>
-                  </div>
-                  <span className="text-xs text-amber-600 font-bold flex items-center gap-1 pt-2 border-t border-neutral-100">
-                    {t('remaining.ssrLink', 'home')}
-                  </span>
-                </Link>
+                    <span className="text-xs text-amber-600 font-bold flex items-center gap-1 pt-2 border-t border-neutral-100">
+                      {t('remaining.ssrLink', 'home')}
+                    </span>
+                  </Link>
+                )}
 
                 {/* CSR Card */}
-                <Link
-                  href={`/articles/${csrStory.slug}`}
-                  className="bg-white p-4 rounded-xl border border-neutral-200 hover:border-blue-500 hover:shadow-md transition space-y-2.5 flex flex-col justify-between group"
-                >
-                  <div className="space-y-2">
-                    <div className="flex items-center justify-between">
-                      <span className="text-xs font-bold text-blue-700">{t('remaining.csrBadge', 'home')}</span>
-                      <RenderModeBadge mode="CSR" size="sm" showIcon={false} />
+                {csrStory.title && (
+                  <Link
+                    href={`/articles/${csrStory.slug}`}
+                    className="bg-white p-4 rounded-xl border border-neutral-200 hover:border-blue-500 hover:shadow-md transition space-y-2.5 flex flex-col justify-between group"
+                  >
+                    <div className="space-y-2">
+                      <div className="flex items-center justify-between">
+                        <span className="text-xs font-bold text-blue-700">{t('remaining.csrBadge', 'home')}</span>
+                        <RenderModeBadge mode="CSR" size="sm" showIcon={false} />
+                      </div>
+                      <h4 className="font-bold text-sm text-neutral-900 group-hover:text-blue-700 transition line-clamp-2 font-cairo">
+                        {csrStory.title}
+                      </h4>
+                      <p className="text-xs text-neutral-600 line-clamp-2">{csrStory.lead}</p>
                     </div>
-                    <h4 className="font-bold text-sm text-neutral-900 group-hover:text-blue-700 transition line-clamp-2 font-cairo">
-                      {csrStory.title}
-                    </h4>
-                    <p className="text-xs text-neutral-600 line-clamp-2">{csrStory.lead}</p>
-                  </div>
-                  <span className="text-xs text-blue-600 font-bold flex items-center gap-1 pt-2 border-t border-neutral-100">
-                    {t('remaining.csrLink', 'home')}
-                  </span>
-                </Link>
+                    <span className="text-xs text-blue-600 font-bold flex items-center gap-1 pt-2 border-t border-neutral-100">
+                      {t('remaining.csrLink', 'home')}
+                    </span>
+                  </Link>
+                )}
               </div>
             </div>
           </div>
@@ -266,7 +277,7 @@ export default function HomePage() {
               </div>
 
               <div className="space-y-4">
-                {mostReadArticles.map((story) => (
+                {mostReadList.map((story) => (
                   <Link
                     key={story.rank}
                     href={story.href}

@@ -9,6 +9,7 @@ import ArticleBody from './ArticleBody';
 import LiveMatchHub from './LiveMatchHub';
 import RenderHUD from './RenderHUD';
 import Sidebar from './Sidebar';
+import { useLanguage } from '@/context/LanguageContext';
 
 interface ArticleViewClientProps {
   article: Article;
@@ -16,11 +17,16 @@ interface ArticleViewClientProps {
 }
 
 export default function ArticleViewClient({
-  article,
+  article: initialArticle,
   serverTimestamp,
 }: ArticleViewClientProps) {
+  const { articlesData } = useLanguage();
   const [fontSize, setFontSize] = useState(18);
   const [scrollProgress, setScrollProgress] = useState(0);
+
+  // Dynamic localized article data based on active language
+  const article: Article =
+    (articlesData?.articles as any)?.[initialArticle.slug] || initialArticle;
 
   // Reading scroll progress tracker
   useEffect(() => {
