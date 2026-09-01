@@ -1,0 +1,24 @@
+{
+  "header": {
+    "readingTime": "زمن القراءة: {{minutes}} دقائق",
+    "publishedOn": "تاريخ النشر: {{date}}",
+    "updatedOn": "آخر تحديث: {{date}}",
+    "author": "بقلم: {{name}}",
+    "shareArticle": "مشاركة المقال",
+    "listenAudio": "استمع إلى هذا المقال بصوت رائع"
+  },
+  "body": {
+    "summaryHeading": "أبرز نقاط التقرير",
+    "relatedArticles": "مقالات ذات صلة",
+    "interactivePoll": "استطلاع رأي تفاعلي",
+    "varWidgetTitle": "إحصائيات حالات الـ VAR في المباريات",
+    "matchHubTitle": "مركز البث المباشر والديربي"
+  },
+  "stats": {
+    "renderMode": "نمط التقديم المستخدم",
+    "ttfb": "زمن الاستجابة الأول (TTFB)",
+    "cacheStatus": "حالة الكاش (Cache State)",
+    "revalidation": "معدل التجديد (Revalidation)",
+    "hudTitle": "لوحة متابعة الرندرة الحية"
+  }
+}

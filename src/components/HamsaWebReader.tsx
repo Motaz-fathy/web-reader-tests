@@ -31,18 +31,30 @@ const DEFAULT_BASE_URL =
 const SCRIPT_URL =
   "https://22a9a3c2.web-reader-cdn-test.pages.dev/web-reader-cdn.js";
 
+import { useLanguage } from "@/context/LanguageContext";
+
 function HamsaWebReaderContent({
   projectId = DEFAULT_PROJECT_ID,
   baseUrl = DEFAULT_BASE_URL,
   apiUrl = DEFAULT_API_URL,
   placement = "floating",
   theme = "dark",
-  language = "EGY",
-  uiLanguage = "ar",
+  language,
+  uiLanguage,
   className = "",
 }: HamsaWebReaderProps) {
   const searchParams = useSearchParams();
   const pathname = usePathname();
+  let currentSiteLang = "ar";
+  try {
+    const langCtx = useLanguage();
+    currentSiteLang = langCtx.language;
+  } catch {
+    // fallback if context not present
+  }
+
+  const activeUiLang = uiLanguage || currentSiteLang;
+  const activeLang = language || (currentSiteLang === "en" ? "EN" : "EGY");
 
   const activeProjectId = searchParams.get("projectId") || projectId;
   const activeApiUrl = searchParams.get("apiUrl") || apiUrl;
@@ -66,20 +78,20 @@ function HamsaWebReaderContent({
         }
       }
     }
-  }, [pathname, activeProjectId, activeApiUrl, activeBaseUrl, activePlacement]);
+  }, [pathname, activeProjectId, activeApiUrl, activeBaseUrl, activePlacement, activeUiLang, activeLang]);
 
   return (
     <>
       <div
-        key={`${pathname}-${activeProjectId}-${activeApiUrl}-${activeBaseUrl}-${activePlacement}`}
+        key={`${pathname}-${activeProjectId}-${activeApiUrl}-${activeBaseUrl}-${activePlacement}-${activeUiLang}`}
         {...{ "hamsa-webreader": "" }}
         data-projectid={activeProjectId}
         data-base-url={activeBaseUrl}
         data-api-url={activeApiUrl}
         data-placement={activePlacement}
         data-theme={activeTheme}
-        data-language={language}
-        data-ui-language={uiLanguage}
+        data-language={activeLang}
+        data-ui-language={activeUiLang}
         className={className}
       />
       <Script src={SCRIPT_URL} strategy="afterInteractive" />

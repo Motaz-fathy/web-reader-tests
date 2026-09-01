@@ -1,29 +1,36 @@
+'use client';
+
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { bbcArticles, mostReadArticles } from '@/data/articles';
 import RenderModeBadge from '@/components/RenderModeBadge';
+import { useLanguage } from '@/context/LanguageContext';
 import { 
   Sparkles, 
   RefreshCw, 
   Server, 
   Laptop, 
   ArrowLeft, 
-  Flame, 
+  ArrowRight,
   Layers, 
   Clock, 
   ChevronLeft, 
+  ChevronRight,
   TrendingUp,
-  ShieldCheck,
   Zap,
   Radio
 } from 'lucide-react';
 
 export default function HomePage() {
+  const { t, language } = useLanguage();
+  
   const mainStory = bbcArticles['c3r0eyydnwgo'];
   const isrStory = bbcArticles['isr-premier-league'];
   const ssrStory = bbcArticles['ssr-breaking-news'];
   const csrStory = bbcArticles['csr-live-match'];
+
+  const ArrowIcon = language === 'ar' ? ArrowLeft : ArrowRight;
+  const ChevronIcon = language === 'ar' ? ChevronLeft : ChevronRight;
 
   return (
     <div className="space-y-10 pb-16">
@@ -34,13 +41,14 @@ export default function HomePage() {
             <div className="space-y-3 max-w-3xl">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-950/80 border border-red-800 text-red-300 text-xs font-bold font-mono">
                 <Sparkles className="w-3.5 h-3.5 text-yellow-400" />
-                <span>Next.js 14 App Router Rendering Patterns Showcase</span>
+                <span>{t('hero.badge', 'home')}</span>
               </div>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black font-cairo leading-tight">
-                منصة عروض أنماط التقديم الحديثة في <span className="text-bbc-red">BBC News عربي</span>
+                {t('hero.title', 'home')}{' '}
+                <span className="text-bbc-red">{t('hero.brandSpan', 'home')}</span>
               </h1>
               <p className="text-neutral-300 text-sm sm:text-base leading-relaxed">
-                استكشف تجربة حية تفاعلية توضح كيف توظف كبرى المنصات الإخبارية العالمية استراتيجيات الرندرة الأربع (GSR, ISR, SSR, CSR) لتحقيق أعلى درجات السرعة، التحديث اللحظي، ومطابقة معايير السيو (SEO).
+                {t('hero.description', 'home')}
               </p>
             </div>
 
@@ -50,15 +58,15 @@ export default function HomePage() {
                 className="px-5 py-3 rounded-xl bg-bbc-red hover:bg-bbc-darkred text-white text-sm font-bold transition flex items-center justify-center gap-2 shadow-lg"
               >
                 <Layers className="w-4 h-4" />
-                <span>دليل مقارنة الأنماط الشامل</span>
-                <ArrowLeft className="w-4 h-4" />
+                <span>{t('hero.compareBtn', 'home')}</span>
+                <ArrowIcon className="w-4 h-4" />
               </Link>
               <Link
                 href="/articles/csr-live-match"
                 className="px-5 py-3 rounded-xl bg-neutral-800 hover:bg-neutral-700 text-neutral-200 text-sm font-bold transition flex items-center justify-center gap-2 border border-neutral-700"
               >
                 <Radio className="w-4 h-4 text-red-400 animate-pulse" />
-                <span>التغطية الحية المباشرة (CSR)</span>
+                <span>{t('hero.liveBtn', 'home')}</span>
               </Link>
             </div>
           </div>
@@ -73,8 +81,8 @@ export default function HomePage() {
                 <span className="text-xs font-bold text-emerald-400 font-mono">1. GSR / SSG</span>
                 <Sparkles className="w-4 h-4 text-emerald-400 group-hover:scale-110 transition" />
               </div>
-              <span className="text-xs font-semibold text-white block">مقال الـ VAR التحكيمي</span>
-              <span className="text-[11px] text-neutral-400 block font-mono">سرعة &lt; 20ms على الـ Edge</span>
+              <span className="text-xs font-semibold text-white block">{t('quickModes.gsrTitle', 'home')}</span>
+              <span className="text-[11px] text-neutral-400 block font-mono">{t('quickModes.gsrDesc', 'home')}</span>
             </Link>
 
             <Link
@@ -85,8 +93,8 @@ export default function HomePage() {
                 <span className="text-xs font-bold text-purple-400 font-mono">2. ISR (30s)</span>
                 <RefreshCw className="w-4 h-4 text-purple-400 group-hover:rotate-180 transition duration-500" />
               </div>
-              <span className="text-xs font-semibold text-white block">تحليل صدارة البريميرليغ</span>
-              <span className="text-[11px] text-neutral-400 block font-mono">تجديد تلقائي + On-Demand</span>
+              <span className="text-xs font-semibold text-white block">{t('quickModes.isrTitle', 'home')}</span>
+              <span className="text-[11px] text-neutral-400 block font-mono">{t('quickModes.isrDesc', 'home')}</span>
             </Link>
 
             <Link
@@ -97,8 +105,8 @@ export default function HomePage() {
                 <span className="text-xs font-bold text-amber-400 font-mono">3. SSR Dynamic</span>
                 <Server className="w-4 h-4 text-amber-400 group-hover:scale-110 transition" />
               </div>
-              <span className="text-xs font-semibold text-white block">مؤتمر الأخبار العاجلة</span>
-              <span className="text-[11px] text-neutral-400 block font-mono">توليد خادمي لحظي مع كل زيارة</span>
+              <span className="text-xs font-semibold text-white block">{t('quickModes.ssrTitle', 'home')}</span>
+              <span className="text-[11px] text-neutral-400 block font-mono">{t('quickModes.ssrDesc', 'home')}</span>
             </Link>
 
             <Link
@@ -109,8 +117,8 @@ export default function HomePage() {
                 <span className="text-xs font-bold text-blue-400 font-mono">4. CSR Realtime</span>
                 <Laptop className="w-4 h-4 text-blue-400 group-hover:scale-110 transition" />
               </div>
-              <span className="text-xs font-semibold text-white block">ديربي لندن دقيقة بدقيقة</span>
-              <span className="text-[11px] text-neutral-400 block font-mono">تحديث فوري بالمتصفح</span>
+              <span className="text-xs font-semibold text-white block">{t('quickModes.csrTitle', 'home')}</span>
+              <span className="text-[11px] text-neutral-400 block font-mono">{t('quickModes.csrDesc', 'home')}</span>
             </Link>
           </div>
         </div>
@@ -123,7 +131,7 @@ export default function HomePage() {
           <div className="lg:col-span-8 space-y-8">
             <div className="border-b-2 border-bbc-red pb-2 flex items-center justify-between">
               <h2 className="text-xl sm:text-2xl font-black font-cairo text-neutral-950">
-                الخبر الرئيسي المميز (Featured Story)
+                {t('featured.heading', 'home')}
               </h2>
               <RenderModeBadge mode={mainStory.renderMode} size="sm" />
             </div>
@@ -137,7 +145,7 @@ export default function HomePage() {
                   alt={mainStory.mainImage.alt}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute top-3 right-3">
+                <div className="absolute top-3 ltr:left-3 rtl:right-3">
                   <span className="bg-bbc-red text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">
                     {mainStory.category}
                   </span>
@@ -147,9 +155,9 @@ export default function HomePage() {
               <div className="p-6 space-y-3">
                 <div className="flex items-center gap-2 text-xs text-neutral-500 font-mono">
                   <Clock className="w-3.5 h-3.5" />
-                  <span>زمن القراءة: {mainStory.readingTimeMinutes} دقائق</span>
+                  <span>{t('featured.readTime', 'home', { minutes: mainStory.readingTimeMinutes })}</span>
                   <span>•</span>
-                  <span>الكاتب: {mainStory.author.name}</span>
+                  <span>{t('featured.author', 'home', { name: mainStory.author.name })}</span>
                 </div>
 
                 <Link href={`/articles/${mainStory.slug}`}>
@@ -167,8 +175,8 @@ export default function HomePage() {
                     href={`/articles/${mainStory.slug}`}
                     className="inline-flex items-center gap-1.5 text-bbc-red hover:text-bbc-darkred font-bold text-sm"
                   >
-                    <span>اقرأ التقرير والتحليل الكامل</span>
-                    <ChevronLeft className="w-4 h-4" />
+                    <span>{t('featured.readFull', 'home')}</span>
+                    <ChevronIcon className="w-4 h-4" />
                   </Link>
 
                   <RenderModeBadge mode={mainStory.renderMode} size="sm" />
@@ -179,7 +187,7 @@ export default function HomePage() {
             {/* Other 3 Mode Cards Grid */}
             <div className="space-y-4 pt-4">
               <h3 className="text-lg font-bold font-cairo text-neutral-950 border-b border-neutral-200 pb-2">
-                نماذج الرندرة التفاعلية المتبقية
+                {t('remaining.heading', 'home')}
               </h3>
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -190,7 +198,7 @@ export default function HomePage() {
                 >
                   <div className="space-y-2">
                     <div className="flex items-center justify-between">
-                      <span className="text-xs font-bold text-purple-700">تقرير إحصائي</span>
+                      <span className="text-xs font-bold text-purple-700">{t('remaining.isrBadge', 'home')}</span>
                       <RenderModeBadge mode="ISR" size="sm" showIcon={false} />
                     </div>
                     <h4 className="font-bold text-sm text-neutral-900 group-hover:text-purple-700 transition line-clamp-2 font-cairo">
@@ -199,7 +207,7 @@ export default function HomePage() {
                     <p className="text-xs text-neutral-600 line-clamp-2">{isrStory.lead}</p>
                   </div>
                   <span className="text-xs text-purple-600 font-bold flex items-center gap-1 pt-2 border-t border-neutral-100">
-                    تصفح تجربة الـ ISR ←
+                    {t('remaining.isrLink', 'home')}
                   </span>
                 </Link>
 
@@ -210,7 +218,7 @@ export default function HomePage() {
                 >
                   <div className="space-y-2">
                     <div className="flex items-center justify-between">
-                      <span className="text-xs font-bold text-amber-700">مؤتمر عاجل</span>
+                      <span className="text-xs font-bold text-amber-700">{t('remaining.ssrBadge', 'home')}</span>
                       <RenderModeBadge mode="SSR" size="sm" showIcon={false} />
                     </div>
                     <h4 className="font-bold text-sm text-neutral-900 group-hover:text-amber-700 transition line-clamp-2 font-cairo">
@@ -219,7 +227,7 @@ export default function HomePage() {
                     <p className="text-xs text-neutral-600 line-clamp-2">{ssrStory.lead}</p>
                   </div>
                   <span className="text-xs text-amber-600 font-bold flex items-center gap-1 pt-2 border-t border-neutral-100">
-                    تصفح تجربة الـ SSR ←
+                    {t('remaining.ssrLink', 'home')}
                   </span>
                 </Link>
 
@@ -230,7 +238,7 @@ export default function HomePage() {
                 >
                   <div className="space-y-2">
                     <div className="flex items-center justify-between">
-                      <span className="text-xs font-bold text-blue-700">مباشر دقيقة بدقيقة</span>
+                      <span className="text-xs font-bold text-blue-700">{t('remaining.csrBadge', 'home')}</span>
                       <RenderModeBadge mode="CSR" size="sm" showIcon={false} />
                     </div>
                     <h4 className="font-bold text-sm text-neutral-900 group-hover:text-blue-700 transition line-clamp-2 font-cairo">
@@ -239,7 +247,7 @@ export default function HomePage() {
                     <p className="text-xs text-neutral-600 line-clamp-2">{csrStory.lead}</p>
                   </div>
                   <span className="text-xs text-blue-600 font-bold flex items-center gap-1 pt-2 border-t border-neutral-100">
-                    تصفح تجربة الـ CSR ←
+                    {t('remaining.csrLink', 'home')}
                   </span>
                 </Link>
               </div>
@@ -253,7 +261,7 @@ export default function HomePage() {
               <div className="flex items-center justify-between border-b border-neutral-200 pb-3 mb-4">
                 <h3 className="text-base font-bold text-neutral-950 font-cairo flex items-center gap-2">
                   <TrendingUp className="w-5 h-5 text-bbc-red" />
-                  الأكثر قراءة اليوم
+                  {t('sidebar.mostRead', 'home')}
                 </h3>
               </div>
 
@@ -282,19 +290,19 @@ export default function HomePage() {
             <div className="rounded-2xl bg-neutral-950 text-white p-5 border border-neutral-800 space-y-3">
               <div className="flex items-center gap-2 text-amber-400 font-bold text-xs">
                 <Zap className="w-4 h-4" />
-                <span>معلومة معمارية سريعة</span>
+                <span>{t('sidebar.quickFact', 'home')}</span>
               </div>
               <h4 className="font-bold text-sm font-cairo leading-snug">
-                كيف تختار بي بي سي بين GSR و ISR في تغطية البطولات؟
+                {t('sidebar.factQuestion', 'home')}
               </h4>
               <p className="text-xs text-neutral-400 leading-relaxed">
-                المقالات التاريخية وتقارير ما بعد المباريات تُخدم بنمط GSR الثابت للسرعة الفائقة، بينما جداول الترتيب وقوائم الهدافين تعتمد نمط ISR للتحديث التلقائي كل 30 ثانية في الخلفية.
+                {t('sidebar.factAnswer', 'home')}
               </p>
               <Link
                 href="/compare"
                 className="inline-block text-xs text-amber-400 hover:underline font-semibold"
               >
-                اقرأ التقرير المقارن المفصل ←
+                {t('sidebar.readDetailed', 'home')}
               </Link>
             </div>
           </div>

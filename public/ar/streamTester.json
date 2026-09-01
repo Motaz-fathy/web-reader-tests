@@ -1,0 +1,24 @@
+{
+  "title": "مختبر البث والتفاعل المباشر (Web Reader Stream Tester)",
+  "subtitle": "بيئة اختبار هندسية لاختبار البروتوكولات الصوتية والبث المباشر المتقدم من خوادم Hamsa AI",
+  "form": {
+    "apiUrl": "رابط API الخادم",
+    "projectId": "معرف المشروع (Project ID)",
+    "targetUrl": "رابط المقال المستهدف",
+    "language": "لغة تحويل الصوت",
+    "startBtn": "بدء اختبار الاستريم",
+    "stopBtn": "إيقاف الاستريم",
+    "downloadWav": "تحميل الملف الصوتي (WAV)"
+  },
+  "status": {
+    "title": "مؤشرات الحالة والأداء",
+    "httpStatus": "رمز الاستجابة HTTP",
+    "ttfb": "زمن البداية TTFB",
+    "contentType": "نوع المحتوى Content-Type",
+    "receivedChunks": "قطع الصغرى المستلمة"
+  },
+  "logs": {
+    "title": "سجل الأحداث والبروتوكول (Event Logs)",
+    "clearBtn": "مسح السجل"
+  }
+}

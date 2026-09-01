@@ -1,0 +1,42 @@
+{
+  "page": {
+    "badge": "Cloud Architecture & Rendering Patterns",
+    "title": "Comprehensive Next.js 14 App Router Rendering Guide",
+    "subtitle": "How BBC News selects the optimal rendering strategy for each type of news content to achieve ultra-fast Time To First Byte (TTFB < 20ms) while guaranteeing real-time data accuracy.",
+    "cards": {
+      "gsr": {
+        "title": "GSR (Static SSG)",
+        "subtitle": "Generated Static Rendering",
+        "desc": "The page is fully pre-built during compile time and cached as static HTML on global Edge CDNs."
+      },
+      "isr": {
+        "title": "ISR (Incremental Static)",
+        "subtitle": "Incremental Static Regeneration",
+        "desc": "Combines static SSG speed on CDN with background revalidation at specified intervals."
+      },
+      "ssr": {
+        "title": "SSR (Dynamic Server)",
+        "subtitle": "Server-Side Rendering",
+        "desc": "The page is rendered dynamically on a Node.js server or Edge Worker for every incoming user request."
+      },
+      "csr": {
+        "title": "CSR (Client Realtime)",
+        "subtitle": "Client-Side Rendering",
+        "desc": "Renders components interactively inside the user's browser client via JavaScript execution."
+      }
+    },
+    "comparisonTable": {
+      "title": "Comprehensive Engineering Comparison Table",
+      "colFeature": "Architectural Feature",
+      "colGsr": "GSR (Static)",
+      "colIsr": "ISR (Revalidated)",
+      "colSsr": "SSR (Dynamic)",
+      "colCsr": "CSR (Client)"
+    }
+  },
+  "modal": {
+    "title": "Next.js 14 App Router Rendering Modes Comparison",
+    "subtitle": "Interactive comparison across the 4 strategies in large-scale news applications",
+    "closeBtn": "Close Modal"
+  }
+}

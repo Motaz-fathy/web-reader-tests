@@ -1,0 +1,76 @@
+{
+  "header": {
+    "title": "NEWS عربي",
+    "subtitle": "RENDERING SHOWCASE",
+    "topBarLive": "بث مباشر وتغطية تفاعلية",
+    "compareModalBtn": "مقارنة أنماط الرندرة (GSR/ISR/SSR/CSR)",
+    "radio": "راديو بي بي سي",
+    "tv": "تلفزيون بي بي سي",
+    "nav": {
+      "home": "الرئيسية",
+      "sports": "رياضة (GSR)",
+      "premierLeague": "تحليل البريميرليغ (ISR)",
+      "breaking": "عاجل (SSR)",
+      "liveMatch": "تغطية حية (CSR)",
+      "streamLab": "مختبر الاستريم",
+      "renderingGuide": "دليل أنماط الرندرة"
+    },
+    "quickCompare": "مقارنة Next.js",
+    "badges": {
+      "gsr": "GSR / ثابت",
+      "isr": "ISR / مجدد",
+      "ssr": "SSR / خادمي",
+      "csr": "CSR / عميل",
+      "streamLab": "Stream Lab",
+      "live": "مباشر"
+    },
+    "language": {
+      "select": "اللغة",
+      "ar": "العربية",
+      "en": "English"
+    }
+  },
+  "footer": {
+    "description": "تطبيق استعراضي متقدم لمعمارية Next.js 14 App Router يقدم تحليلاً حياً ومقارنة تفصيلية بين استراتيجيات التقديم الأربع (GSR, ISR, SSR, CSR) في المواقع الإخبارية الكبرى.",
+    "edgeBadge": "جاهز للعمل على Next.js 14 App Router & Edge CDN",
+    "demosTitle": "نماذج الرندرة التفاعلية",
+    "varArticle": "مقال الـ VAR التحكيمي",
+    "isrReport": "تقرير البريميرليغ المجدد",
+    "ssrConference": "مؤتمر الأخبار العاجلة",
+    "csrCoverage": "تغطية ديربي لندن المباشرة",
+    "compareLink": "دليل مقارنة الأنماط الشامل ←",
+    "sectionsTitle": "أقسام الموقع الإخباري",
+    "homeSection": "الرئيسية",
+    "sportsSection": "رياضة بريميرليغ",
+    "breakingSection": "أخبار عاجلة",
+    "liveSection": "تغطيات مباشرة",
+    "techSection": "علوم وتكنولوجيا",
+    "reportsSection": "تقارير وتحليلات",
+    "podcastSection": "بودكاست وصوتيات",
+    "infographicsSection": "مرئيات وإنفوجرافيك",
+    "trustTitle": "المعايير التقنية والمصداقية",
+    "trustDescription": "هيئة الإذاعة البريطانية تلتزم بأعلى معايير الدقة والنزاهة الإخبارية وسرعة إيصال المعلومة عبر أحدث البنى التحتية السحابية.",
+    "ttfbPoint": "• سرعة التحميل الأولى (TTFB) محسنة لكل نمط",
+    "a11yPoint": "• توافق تام مع معايير الوصول (Accessibility WCAG)",
+    "rtlPoint": "• دعم كامل للقراءة بالاتجاهين (RTL & LTR)",
+    "terms": "شروط الاستخدام",
+    "about": "عن بي بي سي",
+    "privacy": "سياسة الخصوصية",
+    "cookies": "ملفات تعريف الارتباط (Cookies)",
+    "contact": "تواصل مع بي بي سي",
+    "copyright": "© 2026 BBC. هيئة الإذاعة البريطانية ليست مسؤولة عن محتوى المواقع الخارجية."
+  },
+  "ticker": {
+    "title": "عاجل",
+    "item1": "رسمياً: تطبيق تقنية التسلل التلقائي السحابية في جميع مباريات الدوري الإنجليزي",
+    "item2": "بي بي سي تطلق النظام السحابي لتحديث التغطيات الحية بسرعة Edge CDN دون تأخير",
+    "item3": "فريق الرندرة في Next.js 14 يسجل أعلى معدلات استجابة TTFB في البث التفاعلي"
+  },
+  "buttons": {
+    "close": "إغلاق",
+    "details": "التفاصيل",
+    "share": "مشاركة",
+    "listen": "استمع للمقال",
+    "readMore": "اقرأ المزيد"
+  }
+}

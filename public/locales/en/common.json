@@ -1,0 +1,76 @@
+{
+  "header": {
+    "title": "NEWS English",
+    "subtitle": "RENDERING SHOWCASE",
+    "topBarLive": "Live Broadcast & Interactive Coverage",
+    "compareModalBtn": "Compare Rendering Modes (GSR/ISR/SSR/CSR)",
+    "radio": "BBC Radio",
+    "tv": "BBC TV",
+    "nav": {
+      "home": "Home",
+      "sports": "Sports (GSR)",
+      "premierLeague": "Premier League (ISR)",
+      "breaking": "Breaking (SSR)",
+      "liveMatch": "Live Match (CSR)",
+      "streamLab": "Stream Lab",
+      "renderingGuide": "Rendering Guide"
+    },
+    "quickCompare": "Next.js Compare",
+    "badges": {
+      "gsr": "GSR / Static",
+      "isr": "ISR / Revalidated",
+      "ssr": "SSR / Server",
+      "csr": "CSR / Client",
+      "streamLab": "Stream Lab",
+      "live": "LIVE"
+    },
+    "language": {
+      "select": "Language",
+      "ar": "العربية",
+      "en": "English"
+    }
+  },
+  "footer": {
+    "description": "An advanced showcase application for Next.js 14 App Router architecture, providing live analysis and detailed comparison across the 4 rendering strategies (GSR, ISR, SSR, CSR) in major news platforms.",
+    "edgeBadge": "Ready for Next.js 14 App Router & Edge CDN",
+    "demosTitle": "Interactive Rendering Demos",
+    "varArticle": "Referee VAR Analysis",
+    "isrReport": "Revalidated Premier League Report",
+    "ssrConference": "Breaking News Conference",
+    "csrCoverage": "London Derby Live Coverage",
+    "compareLink": "Comprehensive Mode Comparison Guide ←",
+    "sectionsTitle": "News Sections",
+    "homeSection": "Home",
+    "sportsSection": "Premier League Sports",
+    "breakingSection": "Breaking News",
+    "liveSection": "Live Coverage",
+    "techSection": "Science & Tech",
+    "reportsSection": "Reports & Analysis",
+    "podcastSection": "Podcasts & Audio",
+    "infographicsSection": "Visuals & Infographics",
+    "trustTitle": "Technical Standards & Trust",
+    "trustDescription": "BBC is committed to the highest standards of accuracy, journalistic integrity, and fast delivery of information over modern cloud infrastructure.",
+    "ttfbPoint": "• Optimized Time To First Byte (TTFB) for every mode",
+    "a11yPoint": "• Fully compliant with WCAG Accessibility standards",
+    "rtlPoint": "• Full support for RTL & LTR text layout directions",
+    "terms": "Terms of Use",
+    "about": "About BBC",
+    "privacy": "Privacy Policy",
+    "cookies": "Cookies Policy",
+    "contact": "Contact BBC",
+    "copyright": "© 2026 BBC. The BBC is not responsible for the content of external sites."
+  },
+  "ticker": {
+    "title": "BREAKING",
+    "item1": "Official: Cloud-based semi-automated offside technology deployed across all Premier League matches",
+    "item2": "BBC launches cloud edge CDN system for instant live match updates without delay",
+    "item3": "Next.js 14 rendering engineering team achieves fastest TTFB response rates in live streaming"
+  },
+  "buttons": {
+    "close": "Close",
+    "details": "Details",
+    "share": "Share",
+    "listen": "Listen to Article",
+    "readMore": "Read More"
+  }
+}

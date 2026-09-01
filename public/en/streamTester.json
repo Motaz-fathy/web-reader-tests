@@ -1,0 +1,24 @@
+{
+  "title": "Web Reader Stream & Realtime Tester Lab",
+  "subtitle": "Engineering test environment for verifying audio protocols and live streaming from Hamsa AI servers",
+  "form": {
+    "apiUrl": "Server API URL",
+    "projectId": "Project ID",
+    "targetUrl": "Target Article URL",
+    "language": "Audio Conversion Language",
+    "startBtn": "Start Stream Test",
+    "stopBtn": "Stop Stream",
+    "downloadWav": "Download Audio File (WAV)"
+  },
+  "status": {
+    "title": "Status & Performance Metrics",
+    "httpStatus": "HTTP Response Code",
+    "ttfb": "TTFB Latency",
+    "contentType": "Content-Type Header",
+    "receivedChunks": "Received Chunks Count"
+  },
+  "logs": {
+    "title": "Event Logs & Protocol Traces",
+    "clearBtn": "Clear Logs"
+  }
+}

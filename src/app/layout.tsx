@@ -61,6 +61,8 @@ export const metadata: Metadata = {
   },
 };
 
+import { LanguageProvider } from "@/context/LanguageContext";
+
 export default function RootLayout({
   children,
 }: {
@@ -78,18 +80,18 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
       <body className="min-h-screen flex flex-col bg-white text-bbc-black selection:bg-bbc-red selection:text-white">
-        <Header />
-        <BreakingNewsTicker />
-        <main className="flex-1">{children}</main>
-        <Footer />
-        <HamsaWebReader
-          projectId="a5314154-eb11-429e-9b0f-6cfaf459e671"
-          apiUrl="https://api-dev.tryhamsa.com"
-          placement="floating"
-          theme="dark"
-          language="EGY"
-          uiLanguage="ar"
-        />
+        <LanguageProvider>
+          <Header />
+          <BreakingNewsTicker />
+          <main className="flex-1">{children}</main>
+          <Footer />
+          <HamsaWebReader
+            projectId="a5314154-eb11-429e-9b0f-6cfaf459e671"
+            apiUrl="https://api-dev.tryhamsa.com"
+            placement="floating"
+            theme="dark"
+          />
+        </LanguageProvider>
       </body>
     </html>
   );

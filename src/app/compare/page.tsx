@@ -1,3 +1,5 @@
+'use client';
+
 import React from "react";
 import Link from "next/link";
 import {
@@ -11,14 +13,11 @@ import {
   Globe,
 } from "lucide-react";
 import RenderModeBadge from "@/components/RenderModeBadge";
-
-export const metadata = {
-  title: "دليل ومقارنة أنماط الرندرة (GSR vs ISR vs SSR vs CSR) في Next.js 14",
-  description:
-    "دليل هندسي معماري شامل يوضح الفروقات التقنية، استراتيجيات الكاش، والأداء في بيئات النشر الإخبارية الضخمة.",
-};
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function ComparePage() {
+  const { t } = useLanguage();
+
   return (
     <div className="bbc-container py-10 space-y-12">
       {/* Title Header */}
@@ -28,18 +27,15 @@ export default function ComparePage() {
             <Layers className="w-5 h-5" />
           </span>
           <span className="text-xs font-bold text-bbc-red font-cairo uppercase tracking-wider">
-            المعمارية السحابية وأنماط التقديم
+            {t('page.badge', 'compare')}
           </span>
         </div>
 
         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black font-cairo text-neutral-950 leading-tight">
-          الدليل الشامل لأنماط الرندرة في{" "}
-          <span className="text-bbc-red">Next.js 14 App Router</span>
+          {t('page.title', 'compare')}
         </h1>
         <p className="text-neutral-600 text-base leading-relaxed">
-          كيف تختار منصة BBC News عربي الاستراتيجية المثلى لكل نوع من المحتوى
-          الإخباري لتحقيق أعلى سرعة استجابة (TTFB &lt; 20ms) مع ضمان دقة وتدفق
-          البيانات الحية.
+          {t('page.subtitle', 'compare')}
         </p>
       </div>
 
@@ -56,11 +52,10 @@ export default function ComparePage() {
             </div>
 
             <h3 className="text-lg font-bold text-neutral-900 font-cairo">
-              GSR (Static SSG)
+              {t('page.cards.gsr.title', 'compare')}
             </h3>
             <p className="text-xs text-neutral-600 leading-relaxed">
-              توليد ملفات الـ HTML مسبقاً بالكامل وقت بناء التطبيق (Build Time)
-              وتوزيعها على شبكات الحافة العالمية (Edge CDN).
+              {t('page.cards.gsr.desc', 'compare')}
             </p>
 
             <div className="space-y-1.5 pt-2 text-xs border-t border-neutral-100 font-mono">
@@ -101,11 +96,10 @@ export default function ComparePage() {
             </div>
 
             <h3 className="text-lg font-bold text-neutral-900 font-cairo">
-              ISR (Incremental Static)
+              {t('page.cards.isr.title', 'compare')}
             </h3>
             <p className="text-xs text-neutral-600 leading-relaxed">
-              إعادة بناء وتجديد الصفحة تلقائياً في الخلفية كل فترة زمنية محددة
-              (مثل 30s) أو عند الطلب (On-Demand) دون إعادة نشر الموقع.
+              {t('page.cards.isr.desc', 'compare')}
             </p>
 
             <div className="space-y-1.5 pt-2 text-xs border-t border-neutral-100 font-mono">
@@ -144,11 +138,10 @@ export default function ComparePage() {
             </div>
 
             <h3 className="text-lg font-bold text-neutral-900 font-cairo">
-              SSR (Server-Side)
+              {t('page.cards.ssr.title', 'compare')}
             </h3>
             <p className="text-xs text-neutral-600 leading-relaxed">
-              معالجة الكود وتوليد HTML على الخادم مع كل طلب HTTP لحظي بدون كاش
-              مسبق، مع إمكانية قراءة الرؤوس وملفات تعريف الارتباط.
+              {t('page.cards.ssr.desc', 'compare')}
             </p>
 
             <div className="space-y-1.5 pt-2 text-xs border-t border-neutral-100 font-mono">
@@ -189,11 +182,10 @@ export default function ComparePage() {
             </div>
 
             <h3 className="text-lg font-bold text-neutral-900 font-cairo">
-              CSR (Client-Side)
+              {t('page.cards.csr.title', 'compare')}
             </h3>
             <p className="text-xs text-neutral-600 leading-relaxed">
-              تحميل تطبيق React في المتصفح وجلب البيانات الحية والتفاعل عبر
-              WebSockets وتحديث الحالة بالكامل دون إعادة تحميل الصفحة.
+              {t('page.cards.csr.desc', 'compare')}
             </p>
 
             <div className="space-y-1.5 pt-2 text-xs border-t border-neutral-100 font-mono">

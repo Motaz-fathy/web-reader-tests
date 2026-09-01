@@ -1,0 +1,42 @@
+{
+  "hero": {
+    "badge": "Next.js 14 App Router Rendering Patterns Showcase",
+    "title": "Modern Rendering Patterns Showcase on",
+    "brandSpan": "BBC News",
+    "description": "Explore an interactive live demonstration showing how major global news platforms utilize the 4 rendering strategies (GSR, ISR, SSR, CSR) to achieve maximum speed, real-time updates, and SEO compliance.",
+    "compareBtn": "Comprehensive Mode Comparison Guide",
+    "liveBtn": "Live Coverage (CSR)"
+  },
+  "quickModes": {
+    "gsrTitle": "Referee VAR Analysis Article",
+    "gsrDesc": "Speed < 20ms on Edge CDN",
+    "isrTitle": "Premier League Table Analysis",
+    "isrDesc": "Auto Revalidate (30s) + On-Demand",
+    "ssrTitle": "Breaking News Conference",
+    "ssrDesc": "Dynamic Server Generation per Request",
+    "csrTitle": "London Derby Minute-by-Minute",
+    "csrDesc": "Instant Browser Client Hydration"
+  },
+  "featured": {
+    "heading": "Featured Story",
+    "readTime": "Reading time: {{minutes}} mins",
+    "author": "Author: {{name}}",
+    "readFull": "Read Full Report & Analysis"
+  },
+  "remaining": {
+    "heading": "Remaining Interactive Rendering Demos",
+    "isrBadge": "Statistical Report",
+    "isrLink": "Explore ISR Demo ←",
+    "ssrBadge": "Breaking Conference",
+    "ssrLink": "Explore SSR Demo ←",
+    "csrBadge": "Live Minute-by-Minute",
+    "csrLink": "Explore CSR Demo ←"
+  },
+  "sidebar": {
+    "mostRead": "Most Read Today",
+    "quickFact": "Quick Architectural Insight",
+    "factQuestion": "How does BBC choose between GSR and ISR for tournament coverage?",
+    "factAnswer": "Historical articles and post-match summaries are served via static GSR for instant speed, while league tables and top scorers use ISR for auto-revalidation every 30 seconds in the background.",
+    "readDetailed": "Read Detailed Comparison Report ←"
+  }
+}

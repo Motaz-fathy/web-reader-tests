@@ -1,0 +1,24 @@
+{
+  "header": {
+    "readingTime": "Reading time: {{minutes}} mins",
+    "publishedOn": "Published: {{date}}",
+    "updatedOn": "Last updated: {{date}}",
+    "author": "By: {{name}}",
+    "shareArticle": "Share Article",
+    "listenAudio": "Listen to article audio"
+  },
+  "body": {
+    "summaryHeading": "Key Keypoints Summary",
+    "relatedArticles": "Related Articles",
+    "interactivePoll": "Interactive Poll",
+    "varWidgetTitle": "VAR Incident Statistics Widget",
+    "matchHubTitle": "Live Match Hub"
+  },
+  "stats": {
+    "renderMode": "Used Rendering Mode",
+    "ttfb": "Time To First Byte (TTFB)",
+    "cacheStatus": "Cache State",
+    "revalidation": "Revalidation Rate",
+    "hudTitle": "Live Rendering Monitor HUD"
+  }
+}

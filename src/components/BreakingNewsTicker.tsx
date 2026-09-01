@@ -3,31 +3,38 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Flame, ChevronLeft, ChevronRight, Pause, Play } from 'lucide-react';
-import { breakingNewsItems } from '@/data/articles';
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function BreakingNewsTicker() {
+  const { t, language } = useLanguage();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
+
+  const items = [
+    t('ticker.item1', 'common'),
+    t('ticker.item2', 'common'),
+    t('ticker.item3', 'common'),
+  ];
 
   useEffect(() => {
     if (!isPlaying) return;
 
     const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % breakingNewsItems.length);
+      setCurrentIndex((prev) => (prev + 1) % items.length);
     }, 5000);
 
     return () => clearInterval(interval);
-  }, [isPlaying]);
+  }, [isPlaying, items.length]);
 
   const handleNext = () => {
-    setCurrentIndex((prev) => (prev + 1) % breakingNewsItems.length);
+    setCurrentIndex((prev) => (prev + 1) % items.length);
   };
 
   const handlePrev = () => {
-    setCurrentIndex((prev) => (prev - 1 + breakingNewsItems.length) % breakingNewsItems.length);
+    setCurrentIndex((prev) => (prev - 1 + items.length) % items.length);
   };
 
-  const currentItem = breakingNewsItems[currentIndex];
+  const currentText = items[currentIndex] || items[0];
 
   return (
     <div className="bg-bbc-red text-white py-2 px-3 shadow-inner select-none">
@@ -36,16 +43,16 @@ export default function BreakingNewsTicker() {
         <div className="flex items-center gap-2 flex-shrink-0">
           <div className="bg-black/30 backdrop-blur px-2.5 py-1 rounded font-black flex items-center gap-1 text-white tracking-wider">
             <Flame className="w-4 h-4 text-yellow-300 animate-bounce" />
-            <span>عاجل</span>
+            <span>{t('ticker.title', 'common')}</span>
           </div>
           <span className="hidden sm:inline-block text-white/60 font-mono text-xs">
-            [{currentIndex + 1}/{breakingNewsItems.length}]
+            [{currentIndex + 1}/{items.length}]
           </span>
         </div>
 
         {/* Ticker Text */}
         <div 
-          className="flex-1 overflow-hidden transition-all duration-300 text-right font-medium"
+          className="flex-1 overflow-hidden transition-all duration-300 ltr:text-left rtl:text-right font-medium"
           onMouseEnter={() => setIsPlaying(false)}
           onMouseLeave={() => setIsPlaying(true)}
         >
@@ -53,7 +60,7 @@ export default function BreakingNewsTicker() {
             href="/articles/ssr-breaking-news"
             className="hover:underline hover:text-yellow-200 transition line-clamp-1 block"
           >
-            {currentItem.text}
+            {currentText}
           </Link>
         </div>
 
@@ -62,26 +69,23 @@ export default function BreakingNewsTicker() {
           <button
             onClick={() => setIsPlaying(!isPlaying)}
             className="p-1 hover:bg-black/30 rounded text-white/80 hover:text-white transition"
-            title={isPlaying ? 'إيقاف مؤقت' : 'تشغيل'}
-            aria-label="إيقاف أو تشغيل الشريط الإخباري"
+            aria-label="Toggle auto play"
           >
             {isPlaying ? <Pause className="w-3.5 h-3.5" /> : <Play className="w-3.5 h-3.5" />}
           </button>
           <button
             onClick={handlePrev}
             className="p-1 hover:bg-black/30 rounded text-white/80 hover:text-white transition"
-            title="الخبر السابق"
-            aria-label="الخبر السابق"
+            aria-label="Previous item"
           >
-            <ChevronRight className="w-3.5 h-3.5" />
+            {language === 'ar' ? <ChevronRight className="w-3.5 h-3.5" /> : <ChevronLeft className="w-3.5 h-3.5" />}
           </button>
           <button
             onClick={handleNext}
             className="p-1 hover:bg-black/30 rounded text-white/80 hover:text-white transition"
-            title="الخبر التالي"
-            aria-label="الخبر التالي"
+            aria-label="Next item"
           >
-            <ChevronLeft className="w-3.5 h-3.5" />
+            {language === 'ar' ? <ChevronLeft className="w-3.5 h-3.5" /> : <ChevronRight className="w-3.5 h-3.5" />}
           </button>
         </div>
       </div>

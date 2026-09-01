@@ -1,0 +1,42 @@
+{
+  "page": {
+    "badge": "المعمارية السحابية وأنماط التقديم",
+    "title": "الدليل الشامل لأنماط الرندرة في Next.js 14 App Router",
+    "subtitle": "كيف تختار منصة BBC News عربي الاستراتيجية المثلى لكل نوع من المحتوى الإخباري لتحقيق أعلى سرعة استجابة (TTFB < 20ms) مع ضمان دقة وتدفق البيانات الحية.",
+    "cards": {
+      "gsr": {
+        "title": "GSR (Static SSG)",
+        "subtitle": "التقديم المستقر التوليدي (Generated Static Rendering)",
+        "desc": "يتم بناء وتوليد الصفحة بالكامل أثناء خطوة الـ Build وتخزينها كملف HTML ثابت على شبكة Edge CDN عالمية."
+      },
+      "isr": {
+        "title": "ISR (Incremental Static)",
+        "subtitle": "التقديم التجديدي التراكمي (Incremental Static Regeneration)",
+        "desc": "تأخذ الصفحة ميزات الـ SSG من حيث السرعة الفائقة على الـ CDN، مع إمكانية التحديث الدوري خلف الكواليس."
+      },
+      "ssr": {
+        "title": "SSR (Dynamic Server)",
+        "subtitle": "التقديم الخادمي الديناميكي (Server-Side Rendering)",
+        "desc": "يتم إنشاء وتشكيل الصفحة ديناميكياً على خادم Node.js أو Edge Worker مع كل طلب لزائر جديد."
+      },
+      "csr": {
+        "title": "CSR (Client Realtime)",
+        "subtitle": "التقديم المتصفحي التفاعلي (Client-Side Rendering)",
+        "desc": "تعتمد الصفحة على تشغيل وتجميع المكونات بالكامل داخل متصفح المستخدم عبر JavaScript."
+      }
+    },
+    "comparisonTable": {
+      "title": "جدول المقارنة الهندسي الشامل",
+      "colFeature": "الخاصية المعمارية",
+      "colGsr": "GSR (Static)",
+      "colIsr": "ISR (Revalidated)",
+      "colSsr": "SSR (Dynamic)",
+      "colCsr": "CSR (Client)"
+    }
+  },
+  "modal": {
+    "title": "مقارنة أنماط التقديم في Next.js 14 App Router",
+    "subtitle": "مقارنة تفاعلية بين الاستراتيجيات الأربع في البيئات الإخبارية الضخمة",
+    "closeBtn": "إغلاق النافذة"
+  }
+}

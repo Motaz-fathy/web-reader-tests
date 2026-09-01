@@ -1,8 +1,13 @@
+'use client';
+
 import React from 'react';
 import Link from 'next/link';
-import { Layers, ShieldCheck, Zap, Globe, Github } from 'lucide-react';
+import { Layers, ShieldCheck, Zap } from 'lucide-react';
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function Footer() {
+  const { t, language } = useLanguage();
+
   return (
     <footer className="bg-bbc-black text-neutral-300 border-t border-neutral-800 text-sm mt-16">
       {/* Top Banner Accent */}
@@ -22,14 +27,16 @@ export default function Footer() {
               <div className="w-6 h-6 bg-white text-bbc-black font-extrabold flex items-center justify-center text-sm font-mono">
                 C
               </div>
-              <span className="mr-2 font-bold text-white text-base font-cairo">NEWS عربي</span>
+              <span className="mx-2 font-bold text-white text-base font-cairo">
+                {t('header.title', 'common')}
+              </span>
             </div>
             <p className="text-xs text-neutral-400 leading-relaxed">
-              تطبيق استعراضي متقدم لمعمارية Next.js 14 App Router يقدم تحليلاً حياً ومقارنة تفصيلية بين استراتيجيات التقديم الأربع (GSR, ISR, SSR, CSR) في المواقع الإخبارية الكبرى.
+              {t('footer.description', 'common')}
             </p>
             <div className="flex items-center gap-2 text-xs text-emerald-400 bg-emerald-950/40 border border-emerald-800/50 p-2 rounded">
               <Zap className="w-4 h-4 text-emerald-400 flex-shrink-0" />
-              <span>جاهز للعمل على Next.js 14 App Router & Edge CDN</span>
+              <span>{t('footer.edgeBadge', 'common')}</span>
             </div>
           </div>
 
@@ -37,7 +44,7 @@ export default function Footer() {
           <div>
             <h3 className="text-white font-bold text-sm mb-4 border-b border-neutral-800 pb-2 flex items-center gap-2">
               <Layers className="w-4 h-4 text-bbc-red" />
-              نماذج الرندرة التفاعلية
+              {t('footer.demosTitle', 'common')}
             </h3>
             <ul className="space-y-2.5 text-xs text-neutral-400">
               <li>
@@ -45,7 +52,9 @@ export default function Footer() {
                   href="/articles/c3r0eyydnwgo"
                   className="hover:text-white flex items-center justify-between group"
                 >
-                  <span className="group-hover:translate-x-[-2px] transition">مقال الـ VAR التحكيمي</span>
+                  <span className="group-hover:translate-x-[-2px] ltr:group-hover:translate-x-[2px] transition">
+                    {t('footer.varArticle', 'common')}
+                  </span>
                   <span className="bg-emerald-950 text-emerald-400 font-mono text-[10px] px-1.5 py-0.5 rounded border border-emerald-800">
                     GSR / SSG
                   </span>
@@ -56,7 +65,9 @@ export default function Footer() {
                   href="/articles/isr-premier-league"
                   className="hover:text-white flex items-center justify-between group"
                 >
-                  <span className="group-hover:translate-x-[-2px] transition">تقرير البريميرليغ المجدد</span>
+                  <span className="group-hover:translate-x-[-2px] ltr:group-hover:translate-x-[2px] transition">
+                    {t('footer.isrReport', 'common')}
+                  </span>
                   <span className="bg-purple-950 text-purple-300 font-mono text-[10px] px-1.5 py-0.5 rounded border border-purple-800">
                     ISR (30s)
                   </span>
@@ -67,7 +78,9 @@ export default function Footer() {
                   href="/articles/ssr-breaking-news"
                   className="hover:text-white flex items-center justify-between group"
                 >
-                  <span className="group-hover:translate-x-[-2px] transition">مؤتمر الأخبار العاجلة</span>
+                  <span className="group-hover:translate-x-[-2px] ltr:group-hover:translate-x-[2px] transition">
+                    {t('footer.ssrConference', 'common')}
+                  </span>
                   <span className="bg-amber-950 text-amber-300 font-mono text-[10px] px-1.5 py-0.5 rounded border border-amber-800">
                     SSR Dynamic
                   </span>
@@ -78,7 +91,9 @@ export default function Footer() {
                   href="/articles/csr-live-match"
                   className="hover:text-white flex items-center justify-between group"
                 >
-                  <span className="group-hover:translate-x-[-2px] transition">تغطية ديربي لندن المباشرة</span>
+                  <span className="group-hover:translate-x-[-2px] ltr:group-hover:translate-x-[2px] transition">
+                    {t('footer.csrCoverage', 'common')}
+                  </span>
                   <span className="bg-blue-950 text-blue-300 font-mono text-[10px] px-1.5 py-0.5 rounded border border-blue-800">
                     CSR Live
                   </span>
@@ -89,7 +104,7 @@ export default function Footer() {
                   href="/compare"
                   className="text-amber-400 hover:underline font-semibold flex items-center gap-1"
                 >
-                  <span>دليل مقارنة الأنماط الشامل ←</span>
+                  <span>{t('footer.compareLink', 'common')}</span>
                 </Link>
               </li>
             </ul>
@@ -98,17 +113,17 @@ export default function Footer() {
           {/* Column 3: News Sections */}
           <div>
             <h3 className="text-white font-bold text-sm mb-4 border-b border-neutral-800 pb-2">
-              أقسام الموقع الإخباري
+              {t('footer.sectionsTitle', 'common')}
             </h3>
             <div className="grid grid-cols-2 gap-2 text-xs text-neutral-400">
-              <Link href="/" className="hover:text-white transition">الرئيسية</Link>
-              <Link href="/articles/c3r0eyydnwgo" className="hover:text-white transition">رياضة بريميرليغ</Link>
-              <Link href="/articles/ssr-breaking-news" className="hover:text-white transition">أخبار عاجلة</Link>
-              <Link href="/articles/csr-live-match" className="hover:text-white transition">تغطيات مباشرة</Link>
-              <Link href="/compare" className="hover:text-white transition">علوم وتكنولوجيا</Link>
-              <Link href="/compare" className="hover:text-white transition">تقارير وتحليلات</Link>
-              <Link href="/" className="hover:text-white transition">بودكاست وصوتيات</Link>
-              <Link href="/" className="hover:text-white transition">مرئيات وإنفوجرافيك</Link>
+              <Link href="/" className="hover:text-white transition">{t('footer.homeSection', 'common')}</Link>
+              <Link href="/articles/c3r0eyydnwgo" className="hover:text-white transition">{t('footer.sportsSection', 'common')}</Link>
+              <Link href="/articles/ssr-breaking-news" className="hover:text-white transition">{t('footer.breakingSection', 'common')}</Link>
+              <Link href="/articles/csr-live-match" className="hover:text-white transition">{t('footer.liveSection', 'common')}</Link>
+              <Link href="/compare" className="hover:text-white transition">{t('footer.techSection', 'common')}</Link>
+              <Link href="/compare" className="hover:text-white transition">{t('footer.reportsSection', 'common')}</Link>
+              <Link href="/" className="hover:text-white transition">{t('footer.podcastSection', 'common')}</Link>
+              <Link href="/" className="hover:text-white transition">{t('footer.infographicsSection', 'common')}</Link>
             </div>
           </div>
 
@@ -116,15 +131,15 @@ export default function Footer() {
           <div>
             <h3 className="text-white font-bold text-sm mb-4 border-b border-neutral-800 pb-2 flex items-center gap-2">
               <ShieldCheck className="w-4 h-4 text-emerald-400" />
-              المعايير التقنية والمصداقية
+              {t('footer.trustTitle', 'common')}
             </h3>
             <p className="text-xs text-neutral-400 mb-3 leading-relaxed">
-              هيئة الإذاعة البريطانية تلتزم بأعلى معايير الدقة والنزاهة الإخبارية وسرعة إيصال المعلومة عبر أحدث البنى التحتية السحابية.
+              {t('footer.trustDescription', 'common')}
             </p>
             <div className="text-[11px] text-neutral-500 space-y-1">
-              <p>• سرعة التحميل الأولى (TTFB) محسنة لكل نمط</p>
-              <p>• توافق تام مع معايير الوصول (Accessibility WCAG)</p>
-              <p>• دعم كامل للقراءة بالاتجاه من اليمين إلى اليسار (RTL)</p>
+              <p>{t('footer.ttfbPoint', 'common')}</p>
+              <p>{t('footer.a11yPoint', 'common')}</p>
+              <p>{t('footer.rtlPoint', 'common')}</p>
             </div>
           </div>
         </div>
@@ -132,15 +147,15 @@ export default function Footer() {
         {/* Bottom Legal Notice */}
         <div className="pt-8 border-t border-neutral-800/80 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-neutral-500">
           <div className="flex flex-wrap gap-x-4 gap-y-2">
-            <span className="hover:text-neutral-400 transition cursor-pointer">شروط الاستخدام</span>
-            <span className="hover:text-neutral-400 transition cursor-pointer">عن بي بي سي</span>
-            <span className="hover:text-neutral-400 transition cursor-pointer">سياسة الخصوصية</span>
-            <span className="hover:text-neutral-400 transition cursor-pointer">ملفات تعريف الارتباط (Cookies)</span>
-            <span className="hover:text-neutral-400 transition cursor-pointer">تواصل مع بي بي سي</span>
+            <span className="hover:text-neutral-400 transition cursor-pointer">{t('footer.terms', 'common')}</span>
+            <span className="hover:text-neutral-400 transition cursor-pointer">{t('footer.about', 'common')}</span>
+            <span className="hover:text-neutral-400 transition cursor-pointer">{t('footer.privacy', 'common')}</span>
+            <span className="hover:text-neutral-400 transition cursor-pointer">{t('footer.cookies', 'common')}</span>
+            <span className="hover:text-neutral-400 transition cursor-pointer">{t('footer.contact', 'common')}</span>
           </div>
 
           <div className="text-center md:text-left font-mono text-[11px]">
-            © {new Date().getFullYear()} BBC. هيئة الإذاعة البريطانية ليست مسؤولة عن محتوى المواقع الخارجية.
+            {t('footer.copyright', 'common')}
           </div>
         </div>
       </div>

@@ -44,7 +44,10 @@ interface StreamLogItem {
   detail?: any;
 }
 
+import { useLanguage } from '@/context/LanguageContext';
+
 export default function StreamTesterPage() {
+  const { t } = useLanguage();
   // Form State
   const [apiUrl, setApiUrl] = useState('https://api-dev.tryhamsa.com');
   const [projectId, setProjectId] = useState('a5314154-eb11-429e-9b0f-6cfaf459e671');
@@ -530,10 +533,10 @@ export default function StreamTesterPage() {
             <div>
               <h1 className="text-2xl sm:text-3xl font-extrabold text-white font-cairo flex items-center gap-2.5">
                 <Sparkles className="w-6 h-6 text-red-500" />
-                مختبر فحص وتجربة استريم القارئ الصوتي (Web Reader Stream)
+                {t('title', 'streamTester')}
               </h1>
               <p className="text-sm text-neutral-400 mt-1 max-w-3xl leading-relaxed">
-                اختبر استدعاء نقطة النهاية المباشرة <code className="bg-neutral-800 text-red-400 px-1.5 py-0.5 rounded font-mono text-xs">POST /v1/web-reader/convert/stream</code> وقراءة إطارات الـ PCM Audio (0x01) والـ JSON Control (0x02) في الوقت الفعلي مع تشغيل الصوت فائق السرعة وفحص المحتوى المستخرج.
+                {t('subtitle', 'streamTester')}
               </p>
             </div>
 

@@ -19,12 +19,15 @@ import {
 } from 'lucide-react';
 import { RenderMode } from '@/types';
 
+import { useLanguage } from '@/context/LanguageContext';
+
 interface RenderComparisonModalProps {
   isOpen: boolean;
   onClose: () => void;
 }
 
 export default function RenderComparisonModal({ isOpen, onClose }: RenderComparisonModalProps) {
+  const { t } = useLanguage();
   const [activeTab, setActiveTab] = useState<'matrix' | RenderMode>('matrix');
   const [copiedCode, setCopiedCode] = useState(false);
 
@@ -195,10 +198,10 @@ export default function CSRLiveMatchPage() {
             </div>
             <div>
               <h2 className="text-lg sm:text-xl font-bold font-cairo flex items-center gap-2">
-                دليل مقارنة أنماط الرندرة الأربعة في Next.js 14
+                {t('modal.title', 'compare')}
               </h2>
               <p className="text-xs text-neutral-400">
-                فهم الاختلافات المعمارية واستراتيجيات الكاش المناسبة للمواقع الإخبارية العملاقة
+                {t('modal.subtitle', 'compare')}
               </p>
             </div>
           </div>
@@ -206,7 +209,7 @@ export default function CSRLiveMatchPage() {
           <button
             onClick={onClose}
             className="p-2 rounded-lg text-neutral-400 hover:text-white hover:bg-neutral-800 transition"
-            aria-label="إغلاق النافذة"
+            aria-label={t('modal.closeBtn', 'compare')}
           >
             <X className="w-6 h-6" />
           </button>
