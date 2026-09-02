@@ -16,7 +16,7 @@ interface LiveMatchHubProps {
 
 export default function LiveMatchHub({ initialEvents }: LiveMatchHubProps) {
   const { articlesData } = useLanguage();
-  const sampleEvents = articlesData?.liveEvents || [];
+  const sampleEvents = (articlesData?.liveEvents as unknown as LiveEvent[]) || [];
 
   const [events, setEvents] = useState<LiveEvent[]>(initialEvents || sampleEvents);
   const [filter, setFilter] = useState<'all' | 'goal' | 'var' | 'card' | 'sub'>('all');
