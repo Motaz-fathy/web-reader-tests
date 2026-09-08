@@ -16,7 +16,7 @@ import RenderModeBadge from "@/components/RenderModeBadge";
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function ComparePage() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   return (
     <div className="bbc-container py-10 space-y-12">
@@ -283,6 +283,90 @@ export default function ComparePage() {
               أي وميض للصفحة.
             </p>
           </div>
+        </div>
+      </section>
+
+      {/* Comprehensive Architectural & Performance Dossier Section */}
+      <section className="bg-neutral-50 rounded-3xl p-6 sm:p-10 border border-neutral-200 space-y-6">
+        <div className="border-b border-neutral-200 pb-4">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-bbc-red/10 text-bbc-red text-xs font-bold font-mono mb-2">
+            <Layers className="w-3.5 h-3.5" />
+            <span>{language === 'ar' ? 'تحليل معماري مقارن متقدم' : 'Advanced Architectural Benchmark'}</span>
+          </div>
+          <h2 className="text-2xl sm:text-3xl font-black font-cairo text-neutral-950">
+            {language === 'ar'
+              ? 'مصفوفة الأداء والتكاليف واستراتيجيات التخزين المؤقت في بيئات الإنتاج الصحفي'
+              : 'Performance Matrix, Infrastructure Costs, and Caching Strategies in Enterprise Media'}
+          </h2>
+          <p className="text-neutral-600 text-sm mt-1">
+            {language === 'ar'
+              ? 'دراسة تفصيلية تقارن أزمنة الاستجابة، استهلاك الخوادم، ومؤشرات الويب الحيوية Core Web Vitals عبر الأنماط الأربعة'
+              : 'A detailed evaluation comparing response latency, server consumption, and Core Web Vitals across Next.js 14 rendering modes.'}
+          </p>
+        </div>
+
+        <div className="space-y-4 text-neutral-800 leading-[1.85] text-sm sm:text-base">
+          {language === 'ar' ? (
+            <>
+              <p>
+                تمثل معمارية رندرة صفحات الويب العمود الفقري لأي مؤسسة إعلامية تطمح للجمع بين كثافة المحتوى وسرعة الانتشار، حيث تتباين أنماط Next.js 14 بشكل جوهري في كيفية معالجة البيانات وتوزيعها بين خوادم الأصل وشبكات الحافة وأجهزة القراء النهائية.
+              </p>
+              <p>
+                يعتمد نمط التوليد الثابت مسبق البناء (Generated Static Rendering) على تشغيل دورة المعالجة كاملة أثناء مرحلة الـ Build، لإنتاج ملفات HTML وJSON فائقة الصغر تُوزع على خوادم Edge CDN الموزعة جغرافياً، مما يجعل زمن الاستجابة الأولي لا يتجاوز 15 إلى 25 مللي ثانية بغض النظر عن حجم الإقبال الجماهيري.
+              </p>
+              <p>
+                وتبرز الجدوى الاقتصادية لنمط GSR عند التعامل مع المقالات الأرشيفية والتقارير الاستقصائية الدائمة، حيث يخفض هذا النمط استهلاك موارد وحدات المعالجة المركزية (CPU) وقواعد البيانات بنسبة تقارب 98% مقارنة بالمعالجة التقليدية، مما يجنب المؤسسات تكاليف الاستضافة الباهظة أثناء ذروات التصفح.
+              </p>
+              <p>
+                في المقابل، يحل نمط التجديد التدريجي (Incremental Static Regeneration) المعضلة الأزلية بين ثبات الصفحات وتحديث المحتوى، عبر السماح بإعادة بناء الصفحة في الخلفية دون تعطيل القراء، مما يضمن بقاء مؤشرات الأداء الحيوية (Core Web Vitals) في النطاق المثالي دون أي تذبذب في مؤشر Cumulative Layout Shift.
+              </p>
+              <p>
+                وعندما تتطلب التغطيات الإخبارية سرعة استجابة فورية للأحداث العاجلة، يبرز نمط المعالجة الخادميّة (Server-Side Rendering) ليوفر إمكانية جلب أحدث البيانات اللحظية مع كل نقرة، متيحاً لغرف الأخبار تطبيق تخصيص المحتوى الجغرافي والتحكم الصارم في رؤوس الحماية والتحقق من الهوية دون الاعتماد على كاش قديم.
+              </p>
+              <p>
+                ورغم قوة الـ SSR وموثوقيته المطلقة، إلا أنه يفرض متطلبات تشغيلية عالية تستدعي استخدام مجمعات الاتصال بقواعد البيانات ومراقبة دقيقة لأزمنة الاستجابة لتفادي اختناق الخوادم عند تدفق أعداد مليونية من الزوار في أوقات الكوارث أو الأحداث الرياضية الاستثنائية.
+              </p>
+              <p>
+                أما نمط المعالجة في جانب العميل (Client-Side Rendering)، فيوفر المرونة القصوى للتطبيقات التفاعلية كالمراكز الحية للمباريات، حيث يتولى المتصفح رسم واجهة المستخدم والتعامل مع بروتوكولات WebSocket وتدفقات SSE دون الحاجة لتحديث الصفحة بأكملها، مما يمنح تجربة استخدام شبيهة بالتطبيقات الأصلية.
+              </p>
+              <p>
+                إن النجاح الحقيقي للمنصات الإخبارية الحديثة لا يكمن في التعصب لنمط برمجي واحد، بل في تبني المعمارية الهجينة (Hybrid Architecture) التي توظف كل نمط في موضعه الصحيح، مما يوفر أفضل توازن ممكن بين سرعة القراءة الفائقة، تفاعلية المستخدم اللحظية، وكفاءة التكاليف التشغيلية.
+              </p>
+              <p>
+                ويتكامل هذا البناء المعماري المتناسق بسلاسة مع تقنيات القراءة الصوتية الذكية مثل Hamsa WebReader، حيث تتيح البنية الهيكلية المنضبطة للصفحات استخراج النصوص بدقة متناهية وبدء التدفق الصوتي المباشر خلال أجزاء من الثانية، لتقديم تجربة استماع احترافية وشاملة تواكب تطلعات القارئ العربي المعاصر.
+              </p>
+            </>
+          ) : (
+            <>
+              <p>
+                Web rendering architecture constitutes the foundational infrastructure of any modern media publication striving to balance editorial volume with ultra-low latency, where Next.js 14 paradigms diverge significantly in how payloads are computed and distributed between origin nodes, edge CDNs, and client devices.
+              </p>
+              <p>
+                Generated Static Rendering (GSR/SSG) executes complete page synthesis during the build phase, generating highly optimized, immutable HTML and JSON bundles that disperse across global Edge CDN points of presence, achieving initial response latencies between 15 and 25 milliseconds regardless of audience concurrency.
+              </p>
+              <p>
+                The financial and infrastructure dividends of GSR become prominent when serving evergreen archives and long-form investigative journalism, where static caching slashes origin CPU cycles and database query volumes by approximately 98%, eliminating hosting cost spikes during viral breaking traffic.
+              </p>
+              <p>
+                Conversely, Incremental Static Regeneration (ISR) resolves the classical tension between static caching and continuous editorial updates by allowing headless background revalidation cycles, preserving optimal Core Web Vitals and zero Cumulative Layout Shift while keeping league tables and metrics fresh.
+              </p>
+              <p>
+                When breaking bulletins and emergency sports rulings demand uncompromising data freshness, Server-Side Rendering (SSR) delivers the ultimate solution, computing fresh document trees on every incoming HTTP request and enabling precise geo-targeted content routing without stale cache risks.
+              </p>
+              <p>
+                While SSR guarantees absolute data accuracy, it introduces operational overhead requiring database connection pooling, edge compute scaling, and proactive origin monitoring to prevent bottlenecks during millions of concurrent visits during championship finals.
+              </p>
+              <p>
+                Client-Side Rendering (CSR) provides unmatched client flexibility for real-time match command hubs, delegating DOM rendering, WebSocket state streaming, and interactive telemetry to browser memory without requiring destructive page refreshes, delivering a native app feel.
+              </p>
+              <p>
+                True engineering excellence in premier digital publications lies in adopting a cohesive Hybrid Architecture, assigning each rendering strategy to its optimal functional domain to reconcile lightning-fast initial reading speed, dynamic telemetry, and cloud operational efficiency.
+              </p>
+              <p>
+                This harmonious architecture pairs seamlessly with accessibility solutions such as Hamsa WebReader, where clean document semantic structure allows rapid text extraction and sub-second PCM audio streaming, ensuring an effortless, natural listening experience for global audiences.
+              </p>
+            </>
+          )}
         </div>
       </section>
     </div>

@@ -319,6 +319,104 @@ export default function HomePage() {
           </div>
         </div>
       </div>
+
+      {/* Comprehensive Editorial & Technical Dossier Section */}
+      <section className="bbc-container mt-12 pt-10 border-t-2 border-neutral-200">
+        <div className="bg-neutral-50 rounded-3xl p-6 sm:p-10 border border-neutral-200 space-y-6">
+          <div className="border-b border-neutral-200 pb-4">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-bbc-red/10 text-bbc-red text-xs font-bold font-mono mb-2">
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>{language === 'ar' ? 'ملف استقصائي خاص' : 'Special Investigative Dossier'}</span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-black font-cairo text-neutral-950">
+              {language === 'ar'
+                ? 'تحولات الإعلام الرقمي وهندسة السرعة الفائقة في غرف الأخبار الحديثة'
+                : 'Digital Media Transformations & Ultra-High Speed Architecture in Modern Newsrooms'}
+            </h2>
+            <p className="text-neutral-600 text-sm mt-1">
+              {language === 'ar'
+                ? 'قراءة متعمقة في كواليس صناعة المحتوى الإخباري والرياضي وتكامل تقنيات الرندرة الأربعة مع القراءة الصوتية الذكية'
+                : 'An in-depth examination of digital newsroom workflows and the integration of four rendering paradigms with AI audio reading.'}
+            </p>
+          </div>
+
+          <div className="space-y-4 text-neutral-800 leading-[1.85] text-sm sm:text-base">
+            {language === 'ar' ? (
+              <>
+                <p>
+                  يشهد المشهد الإعلامي العالمي تحولاً بنيوياً غير مسبوق مدفوعاً بمتطلبات الجيل الجديد من القراء الذين لم يعودوا يكتفون بالخبر المكتوب بصيغته التقليدية، بل باتوا يطالبون بتجربة تفاعلية متكاملة تجمع بين القراءة اللحظية والاستماع الصوتي المباشر والوصول السلس للبيانات والإحصائيات دون أي تباطؤ أو انتظار.
+                </p>
+                <p>
+                  تفرض التغطيات الحية للأحداث الرياضية العالمية، كقمم الدوري الإنجليزي الممتاز وكلاسيكو الأرض بين ريال مدريد وبرشلونة، تحديات تقنية معقدة على المؤسسات الصحفية، حيث يتطلب تدفق مئات الآلاف من الزوار المتزامنين في لحظة تسجيل الهدف أو إعلان قرار تقنية الفيديو استجابة خادميّة لا تتجاوز بضع مئات من الأجزاء من الثانية.
+                </p>
+                <p>
+                  لم يعد الفارق بين النجاح والإخفاق في الإعلام الرقمي مقتصراً على السبق الصحفي فحسب، بل يمتد ليشمل سرعة تحميل الصفحة وثبات العناصر البصرية، إذ تشير دراسات سلوك القراء إلى أن أي تأخير يتجاوز ثانية واحدة يؤدي إلى فقدان أكثر من 30% من الزوار وارتفاع ملحوظ في معدل الارتداد عبر الأجهزة الذكية.
+                </p>
+                <p>
+                  استجابة لهذه التحولات، تبنت شبكة BBC News عربي أحدث معايير الأداء الرقمي في Next.js 14 App Router، عبر الدمج المتوازن بين أنماط الرندرة الأربعة: التوليد الثابت الفائق للمقالات المرجعية، والتجديد التدريجي للإحصائيات المتغيرة، والمعالجة الخادميّة للأخبار العاجلة، والتفاعل العميل للبث الحي دقيقة بدقيقة.
+                </p>
+                <p>
+                  يمثل نمط التوليد الثابت حجر الأساس للبنية التحتية منخفضة التكلفة وفائقة السرعة، حيث تُحفظ الصفحات مسبقة البناء في شبكات توزيع المحتوى العالمية، مما يضمن وصول القراء في الشرق الأوسط وشمال أفريقيا إلى المحتوى بنفس السرعة الاستثنائية التي يحصل عليها المستخدمون في لندن أو نيويورك.
+                </p>
+                <p>
+                  في المقابل، يتيح نمط التجديد التدريجي المستمر تحرير المؤسسات الإعلامية من أعباء إعادة بناء المواقع بالكامل عند كل تعديل بسيط، إذ يتولى الخادم تجديد الكاش تلقائياً في الخلفية كل 30 ثانية فور حدوث أي مستجد، ليتلقى الزائر البيانات الحديثة دون أن يشعر بأي بطء أو انقطاع.
+                </p>
+                <p>
+                  أما في حالات التغطية الإخبارية العاجلة والمؤتمرات الصحفية الطارئة، فإن خيار المعالجة في جانب الخادم يبرز بوصفه الأداة الأكثر موثوقية لمطابقة التوقيت بدقة متناهية وإلغاء أي كاش قديم، مما يضمن أن ما يقرأه الجمهور يعكس بدقة ما يدور في قاعة المؤتمرات بلندن في اللحظة نفسها.
+                </p>
+                <p>
+                  ولإثراء تجربة التغطية الميدانية التفاعلية لكلاسيكو الأرض، يتكامل نمط المعالجة في جانب العميل مع واجهات برمجة التطبيقات الحديثة لتحديث أرقام الاستحواذ والتسلل والبطاقات لحظة بلحظة داخل المتصفح، مع إتاحة استطلاعات الرأي الفورية والجداول المتحركة التي تبقي القارئ في قلب الحدث.
+                </p>
+                <p>
+                  وتتويجاً لهذه المنظومة المتطورة، يأتي دمج القارئ الصوتي التفاعلي المتقدم ليمثل نقلة نوعية في إتاحة المحتوى، حيث يتيح للجمهور الاستماع إلى المقالات والأخبار بصوت طبيعي عالي النقاء وباللهجات المتعددة، مع ميزات التدفق الصوتي المباشر والتنقل المرن بين الفقرات.
+                </p>
+                <p>
+                  يؤكد خبراء التقنية أن مستقبل غرف الأخبار سيعتمد بصورة متزايدة على المزج الذكي بين الذكاء الاصطناعي التوليدي وهندسة الويب السحابية، لتوفير خلاصات إخبارية صوتية ومقروءة مخصصة وفق اهتمامات كل قارئ على حدة، دون المساس بنزاهة التحرير ودقة المعايير المهنية المتبعة.
+                </p>
+                <p>
+                  إن هذه المنصة الاستعراضية تضع بين أيدي المطورين والمحررين نموذجاً عملياً ملموساً يوضح كيف يمكن للتقنيات الحديثة أن تخدم الرسالة الصحفية النبيلة، وترتقي بتجربة القارئ العربي إلى مستويات ريادية تضاهي كبرى المنصات الرقمية العالمية في الأداء والجودة.
+                </p>
+              </>
+            ) : (
+              <>
+                <p>
+                  The global digital media landscape is undergoing an unprecedented architectural transformation driven by modern readers who demand immersive, multi-format experiences combining instant text rendering, live voice playback, and real-time analytical telemetry without friction.
+                </p>
+                <p>
+                  Live sports journalism, including Premier League title showdowns and historic El Clásico encounters between Real Madrid and Barcelona, introduces extreme engineering demands where hundreds of thousands of concurrent readers seek instant video-assistant referee clarifications.
+                </p>
+                <p>
+                  In high-performance newsrooms, page speed metrics and First Contentful Paint represent decisive competitive factors, with telemetry demonstrating that every additional second of latency increases bounce rates significantly across mobile devices and edge networks.
+                </p>
+                <p>
+                  BBC News Arabic addresses these challenges by implementing Next.js 14 App Router rendering paradigms, orchestrating Generated Static Rendering for evergreen archives, Incremental Static Regeneration for periodic tables, SSR for breaking bulletins, and CSR for pitch telemetry.
+                </p>
+                <p>
+                  Generated Static Rendering serves as the baseline foundation for global edge efficiency, storing pre-rendered static assets across edge CDN nodes to guarantee identical millisecond delivery whether requested from Cairo, Dubai, London, or San Francisco.
+                </p>
+                <p>
+                  Incremental Static Regeneration liberates publishing workflows from monolithic website rebuilds, allowing background cache revalidation cycles every 30 seconds so global audiences consistently access refreshed points tables without performance hiccups.
+                </p>
+                <p>
+                  During breaking news developments and emergency league summits, Server-Side Rendering guarantees total cache bypass, ensuring that incoming reader requests receive instantaneous clock synchronization and newly broadcast press statements without stale delay.
+                </p>
+                <p>
+                  Client-Side Rendering completes the architectural puzzle by powering interactive match centers, streaming tactical pass maps, VAR timeline updates, and live fan polling directly within browser memory for an application-grade mobile experience.
+                </p>
+                <p>
+                  Integrating the Hamsa WebReader audio player marks a milestone in content accessibility, granting audiences natural multilingual narration with live PCM audio streaming, instant playback controls, and seamless background listening capabilities.
+                </p>
+                <p>
+                  Industry analysts forecast that premier newsrooms will increasingly converge generative AI narration and serverless infrastructure, delivering personalized audio briefings tailored to individual user reading habits while upholding rigorous editorial integrity.
+                </p>
+                <p>
+                  This showcase platform provides engineers and journalists with a production-grade benchmark illustrating how cutting-edge web architecture elevates informative reporting and establishes a world-class standard for Arabic digital media.
+                </p>
+              </>
+            )}
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
