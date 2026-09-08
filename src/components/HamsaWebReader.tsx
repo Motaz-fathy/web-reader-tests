@@ -90,7 +90,7 @@ function HamsaWebReaderContent({
         data-ui-language={activeUiLang}
         className={className}
       />
-      <Script src={SCRIPT_URL} strategy="afterInteractive" />
+      <Script src={`${activeBaseUrl}/webreader.js`} strategy="afterInteractive" />
     </>
   );
 }
