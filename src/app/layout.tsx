@@ -87,8 +87,8 @@ export default function RootLayout({
           <Footer />
           <HamsaWebReader
             projectId="a5314154-eb11-429e-9b0f-6cfaf459e671"
-            baseUrl="https://app-substitute-theories-matching.trycloudflare.com"
-            apiUrl="https://app-substitute-theories-matching.trycloudflare.com/api"
+            baseUrl="https://restored-expensive-wallet-construction.trycloudflare.com"
+            apiUrl="https://restored-expensive-wallet-construction.trycloudflare.com/api"
             placement="floating"
             theme="dark"
           />
