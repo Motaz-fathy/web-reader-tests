@@ -87,8 +87,8 @@ export default function RootLayout({
           <Footer />
           <HamsaWebReader
             projectId="a5314154-eb11-429e-9b0f-6cfaf459e671"
-            baseUrl="https://titled-marathon-dale-trucks.trycloudflare.com"
-            apiUrl="https://titled-marathon-dale-trucks.trycloudflare.com/api"
+            baseUrl="https://facial-broken-walked-competitors.trycloudflare.com"
+            apiUrl="https://facial-broken-walked-competitors.trycloudflare.com/api"
             placement="floating"
             theme="dark"
           />

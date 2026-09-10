@@ -18,14 +18,14 @@ interface HamsaWebReaderProps {
 const DEFAULT_PROJECT_ID = "a5314154-eb11-429e-9b0f-6cfaf459e671";
 const DEFAULT_API_URL =
   process.env.NEXT_PUBLIC_HAMSA_API_URL ||
-  "https://titled-marathon-dale-trucks.trycloudflare.com/api";
+  "https://facial-broken-walked-competitors.trycloudflare.com/api";
 
 const DEFAULT_BASE_URL =
   process.env.NEXT_PUBLIC_HAMSA_BASE_URL ||
-  "https://titled-marathon-dale-trucks.trycloudflare.com";
+  "https://facial-broken-walked-competitors.trycloudflare.com";
 
 const SCRIPT_URL =
-  "https://titled-marathon-dale-trucks.trycloudflare.com/webreader.js";
+  "https://facial-broken-walked-competitors.trycloudflare.com/webreader.js";
 
 import { useLanguage } from "@/context/LanguageContext";
 
