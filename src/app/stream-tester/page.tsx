@@ -49,7 +49,7 @@ import { useLanguage } from '@/context/LanguageContext';
 export default function StreamTesterPage() {
   const { t } = useLanguage();
   // Form State
-  const [apiUrl, setApiUrl] = useState('https://antonio-hair-jimmy-daniel.trycloudflare.com/api');
+  const [apiUrl, setApiUrl] = useState('https://wish-coastal-lottery-commissioners.trycloudflare.com/api');
   const [projectId, setProjectId] = useState('a5314154-eb11-429e-9b0f-6cfaf459e671');
   const [targetUrl, setTargetUrl] = useState('https://web-reader-tests.vercel.app/articles/csr-live-match');
   const [languageCode, setLanguageCode] = useState('egy');

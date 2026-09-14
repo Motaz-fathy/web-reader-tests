@@ -87,8 +87,8 @@ export default function RootLayout({
           <Footer />
           <HamsaWebReader
             projectId="a5314154-eb11-429e-9b0f-6cfaf459e671"
-            baseUrl="https://antonio-hair-jimmy-daniel.trycloudflare.com"
-            apiUrl="https://antonio-hair-jimmy-daniel.trycloudflare.com/api"
+            baseUrl="https://wish-coastal-lottery-commissioners.trycloudflare.com"
+            apiUrl="https://wish-coastal-lottery-commissioners.trycloudflare.com/api"
             placement="floating"
             theme="dark"
           />
