@@ -18,14 +18,14 @@ interface HamsaWebReaderProps {
 const DEFAULT_PROJECT_ID = "a5314154-eb11-429e-9b0f-6cfaf459e671";
 const DEFAULT_API_URL =
   process.env.NEXT_PUBLIC_HAMSA_API_URL ||
-  "https://avatar-eden-wise-coated.trycloudflare.com/api";
+  "https://amanda-anti-constitution-lap.trycloudflare.com/api";
 
 const DEFAULT_BASE_URL =
   process.env.NEXT_PUBLIC_HAMSA_BASE_URL ||
-  "https://avatar-eden-wise-coated.trycloudflare.com";
+  "https://amanda-anti-constitution-lap.trycloudflare.com";
 
 const SCRIPT_URL =
-  "https://avatar-eden-wise-coated.trycloudflare.com/webreader.js";
+  "https://amanda-anti-constitution-lap.trycloudflare.com/webreader.js";
 
 import { useLanguage } from "@/context/LanguageContext";
 
