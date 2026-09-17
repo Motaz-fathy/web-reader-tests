@@ -87,8 +87,8 @@ export default function RootLayout({
           <Footer />
           <HamsaWebReader
             projectId="a5314154-eb11-429e-9b0f-6cfaf459e671"
-            baseUrl="https://amanda-anti-constitution-lap.trycloudflare.com"
-            apiUrl="https://amanda-anti-constitution-lap.trycloudflare.com/api"
+            baseUrl="https://ear-hardware-similarly-soonest.trycloudflare.com"
+            apiUrl="https://ear-hardware-similarly-soonest.trycloudflare.com/api"
             placement="floating"
             theme="dark"
           />
