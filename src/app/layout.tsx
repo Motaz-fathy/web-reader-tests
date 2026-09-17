@@ -87,8 +87,8 @@ export default function RootLayout({
           <Footer />
           <HamsaWebReader
             projectId="a5314154-eb11-429e-9b0f-6cfaf459e671"
-            baseUrl="https://ear-hardware-similarly-soonest.trycloudflare.com"
-            apiUrl="https://ear-hardware-similarly-soonest.trycloudflare.com/api"
+            baseUrl="https://acres-plot-purpose-fuzzy.trycloudflare.com"
+            apiUrl="https://acres-plot-purpose-fuzzy.trycloudflare.com/api"
             placement="floating"
             theme="dark"
           />
