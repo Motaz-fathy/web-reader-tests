@@ -18,14 +18,14 @@ interface HamsaWebReaderProps {
 const DEFAULT_PROJECT_ID = "a5314154-eb11-429e-9b0f-6cfaf459e671";
 const DEFAULT_API_URL =
   process.env.NEXT_PUBLIC_HAMSA_API_URL ||
-  "https://acres-plot-purpose-fuzzy.trycloudflare.com/api";
+  "https://overhead-called-better-rica.trycloudflare.com/api";
 
 const DEFAULT_BASE_URL =
   process.env.NEXT_PUBLIC_HAMSA_BASE_URL ||
-  "https://acres-plot-purpose-fuzzy.trycloudflare.com";
+  "https://overhead-called-better-rica.trycloudflare.com";
 
 const SCRIPT_URL =
-  "https://acres-plot-purpose-fuzzy.trycloudflare.com/webreader.js";
+  "https://overhead-called-better-rica.trycloudflare.com/webreader.js";
 
 import { useLanguage } from "@/context/LanguageContext";
 
