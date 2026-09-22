@@ -87,8 +87,8 @@ export default function RootLayout({
           <Footer />
           <HamsaWebReader
             projectId="a5314154-eb11-429e-9b0f-6cfaf459e671"
-            baseUrl="https://literature-adapters-blond-move.trycloudflare.com"
-            apiUrl="https://literature-adapters-blond-move.trycloudflare.com/api"
+            baseUrl="https://owen-robot-gst-beds.trycloudflare.com"
+            apiUrl="https://owen-robot-gst-beds.trycloudflare.com/api"
             placement="floating"
             theme="dark"
           />
