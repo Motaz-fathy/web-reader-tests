@@ -18,14 +18,14 @@ interface HamsaWebReaderProps {
 const DEFAULT_PROJECT_ID = "a5314154-eb11-429e-9b0f-6cfaf459e671";
 const DEFAULT_API_URL =
   process.env.NEXT_PUBLIC_HAMSA_API_URL ||
-  "https://owen-robot-gst-beds.trycloudflare.com/api";
+  "https://tension-paul-publishing-ipod.trycloudflare.com/api";
 
 const DEFAULT_BASE_URL =
   process.env.NEXT_PUBLIC_HAMSA_BASE_URL ||
-  "https://owen-robot-gst-beds.trycloudflare.com";
+  "https://tension-paul-publishing-ipod.trycloudflare.com";
 
 const SCRIPT_URL =
-  "https://owen-robot-gst-beds.trycloudflare.com/webreader.js";
+  "https://tension-paul-publishing-ipod.trycloudflare.com/webreader.js";
 
 import { useLanguage } from "@/context/LanguageContext";
 
