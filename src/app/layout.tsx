@@ -87,8 +87,8 @@ export default function RootLayout({
           <Footer />
           <HamsaWebReader
             projectId="a5314154-eb11-429e-9b0f-6cfaf459e671"
-            baseUrl="https://overhead-called-better-rica.trycloudflare.com"
-            apiUrl="https://overhead-called-better-rica.trycloudflare.com/api"
+            baseUrl="https://literature-adapters-blond-move.trycloudflare.com"
+            apiUrl="https://literature-adapters-blond-move.trycloudflare.com/api"
             placement="floating"
             theme="dark"
           />
