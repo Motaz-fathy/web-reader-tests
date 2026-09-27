@@ -87,8 +87,8 @@ export default function RootLayout({
           <Footer />
           <HamsaWebReader
             projectId="a5314154-eb11-429e-9b0f-6cfaf459e671"
-            baseUrl="https://tension-paul-publishing-ipod.trycloudflare.com"
-            apiUrl="https://tension-paul-publishing-ipod.trycloudflare.com/api"
+            baseUrl="https://rim-developmental-warriors-preston.trycloudflare.com"
+            apiUrl="https://rim-developmental-warriors-preston.trycloudflare.com/api"
             placement="floating"
             theme="dark"
           />
