@@ -87,8 +87,8 @@ export default function RootLayout({
           <Footer />
           <HamsaWebReader
             projectId="a5314154-eb11-429e-9b0f-6cfaf459e671"
-            baseUrl="https://chemical-cargo-ciao-lodge.trycloudflare.com"
-            apiUrl="https://chemical-cargo-ciao-lodge.trycloudflare.com/api"
+            baseUrl="https://ericsson-recommends-specifies-aircraft.trycloudflare.com"
+            apiUrl="https://ericsson-recommends-specifies-aircraft.trycloudflare.com/api"
             placement="floating"
             theme="dark"
           />
