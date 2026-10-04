@@ -51,7 +51,7 @@ export default function StreamTesterPage() {
   // Form State
   const [apiUrl, setApiUrl] = useState(
     process.env.NEXT_PUBLIC_HAMSA_API_URL ||
-    'https://personally-variable-tee-headphones.trycloudflare.com/api'
+    'https://superintendent-salem-naval-pointer.trycloudflare.com/api'
   );
   const [projectId, setProjectId] = useState('a5314154-eb11-429e-9b0f-6cfaf459e671');
   const [targetUrl, setTargetUrl] = useState('https://web-reader-tests.vercel.app/articles/csr-live-match');
