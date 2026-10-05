@@ -17,7 +17,7 @@ interface HamsaWebReaderProps {
 
 const DEFAULT_PROJECT_ID =
   process.env.NEXT_PUBLIC_HAMSA_PROJECT_ID ||
-  "a5314154-eb11-429e-9b0f-6cfaf459e671";
+  "6d36c657-d590-4963-9411-984c47d13e69";
 const DEFAULT_API_URL =
   process.env.NEXT_PUBLIC_HAMSA_API_URL ||
   "https://roads-getting-contrary-does.trycloudflare.com/api";

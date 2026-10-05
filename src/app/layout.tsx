@@ -86,7 +86,7 @@ export default function RootLayout({
           <main className="flex-1">{children}</main>
           <Footer />
           <HamsaWebReader
-            projectId="a5314154-eb11-429e-9b0f-6cfaf459e671"
+            projectId="6d36c657-d590-4963-9411-984c47d13e69"
             baseUrl="https://roads-getting-contrary-does.trycloudflare.com"
             apiUrl="https://roads-getting-contrary-does.trycloudflare.com/api"
             placement="floating"
