@@ -87,8 +87,8 @@ export default function RootLayout({
           <Footer />
           <HamsaWebReader
             projectId="a5314154-eb11-429e-9b0f-6cfaf459e671"
-            baseUrl="https://superintendent-salem-naval-pointer.trycloudflare.com"
-            apiUrl="https://superintendent-salem-naval-pointer.trycloudflare.com/api"
+            baseUrl="https://roads-getting-contrary-does.trycloudflare.com"
+            apiUrl="https://roads-getting-contrary-does.trycloudflare.com/api"
             placement="floating"
             theme="dark"
           />
