@@ -51,9 +51,12 @@ export default function StreamTesterPage() {
   // Form State
   const [apiUrl, setApiUrl] = useState(
     process.env.NEXT_PUBLIC_HAMSA_API_URL ||
-    'https://roads-getting-contrary-does.trycloudflare.com/api'
+    'https://ken-neighborhood-calculator-early.trycloudflare.com/api'
   );
-  const [projectId, setProjectId] = useState('a5314154-eb11-429e-9b0f-6cfaf459e671');
+  const [projectId, setProjectId] = useState(
+    process.env.NEXT_PUBLIC_HAMSA_PROJECT_ID ||
+    '6d36c657-d590-4963-9411-984c47d13e69'
+  );
   const [targetUrl, setTargetUrl] = useState('https://web-reader-tests.vercel.app/articles/csr-live-match');
   const [languageCode, setLanguageCode] = useState('egy');
 

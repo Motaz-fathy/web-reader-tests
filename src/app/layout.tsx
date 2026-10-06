@@ -87,8 +87,8 @@ export default function RootLayout({
           <Footer />
           <HamsaWebReader
             projectId="6d36c657-d590-4963-9411-984c47d13e69"
-            baseUrl="https://roads-getting-contrary-does.trycloudflare.com"
-            apiUrl="https://roads-getting-contrary-does.trycloudflare.com/api"
+            baseUrl="https://ken-neighborhood-calculator-early.trycloudflare.com"
+            apiUrl="https://ken-neighborhood-calculator-early.trycloudflare.com/api"
             placement="floating"
             theme="dark"
           />

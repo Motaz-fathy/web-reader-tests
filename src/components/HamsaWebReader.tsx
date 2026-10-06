@@ -20,14 +20,14 @@ const DEFAULT_PROJECT_ID =
   "6d36c657-d590-4963-9411-984c47d13e69";
 const DEFAULT_API_URL =
   process.env.NEXT_PUBLIC_HAMSA_API_URL ||
-  "https://roads-getting-contrary-does.trycloudflare.com/api";
+  "https://ken-neighborhood-calculator-early.trycloudflare.com/api";
 
 const DEFAULT_BASE_URL =
   process.env.NEXT_PUBLIC_HAMSA_BASE_URL ||
-  "https://roads-getting-contrary-does.trycloudflare.com";
+  "https://ken-neighborhood-calculator-early.trycloudflare.com";
 
 const SCRIPT_URL =
-  "https://roads-getting-contrary-does.trycloudflare.com/webreader.js";
+  "https://ken-neighborhood-calculator-early.trycloudflare.com/webreader.js";
 
 import { useLanguage } from "@/context/LanguageContext";
 
